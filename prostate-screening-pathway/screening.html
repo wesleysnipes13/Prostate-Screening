@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who Should Be Screened — Prostate Screening Pathway</title>
+  <meta name="description" content="Determine if PSA screening is right for you. Complete a risk stratification questionnaire and take the PSA self-assessment quiz." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- =================== NAVIGATION =================== -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Prostate Screening Pathway Home">
+      <div class="nav-logo-icon" aria-hidden="true">🩺</div>
+      <div class="nav-logo-text">
+        Prostate Screening Pathway
+        <span class="nav-logo-sub">Patient Information Resource</span>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="screening.html">Who Should Be Screened</a></li>
+      <li><a href="results.html">Understand Your PSA</a></li>
+      <li><a href="education.html">Further Education</a></li>
+      <li><a href="data.html">What the Data Says</a></li>
+    </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+  <ul role="list">
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="screening.html">🔍 Who Should Be Screened</a></li>
+    <li><a href="results.html">📊 Understand Your PSA</a></li>
+    <li><a href="education.html">📖 Further Education</a></li>
+    <li><a href="data.html">📈 What the Data Says</a></li>
+  </ul>
+</div>
+
+<!-- =================== PAGE HEADER =================== -->
+<header class="hero" style="padding:2.5rem 1rem 3rem;">
+  <div class="hero-badge">Step 1 of Your Pathway</div>
+  <h1>Who Should Be Screened?</h1>
+  <p>Answer a few questions to find out your risk category, when you should start screening, and how often to be tested. No PSA result required for this section.</p>
+</header>
+
+<main class="page-wrap" id="main-content">
+
+  <!-- ========== RISK STRATIFICATION QUESTIONNAIRE ========== -->
+  <section class="section">
+    <div class="section-title">
+      <span class="tag">Part 1 of 2</span>
+      <h2>Risk Stratification Questionnaire</h2>
+      <p>Your baseline risk determines the recommended age to begin screening and how frequently you should be tested. Answer each question honestly — there are no wrong answers.</p>
+    </div>
+
+    <div class="card">
+      <form id="risk-form" novalidate>
+
+        <!-- Age -->
+        <div class="form-group">
+          <label class="form-label" for="age">What is your current age?</label>
+          <input type="number" id="age" name="age" class="form-input" placeholder="e.g. 52" min="30" max="100" inputmode="numeric" />
+          <span class="form-hint">Enter a whole number between 30 and 100.</span>
+        </div>
+
+        <!-- Ancestry -->
+        <div class="form-group">
+          <label class="form-label">Do you identify as Black or of African descent?</label>
+          <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.5rem;">Men of Black ancestry have a statistically higher risk of prostate cancer and are more likely to develop aggressive disease at a younger age. This information helps determine the appropriate screening timeline for you.</p>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="radio" name="black-ancestry" value="yes" />
+              <span>Yes, I identify as Black or of African descent</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="radio" name="black-ancestry" value="no" />
+              <span>No</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="radio" name="black-ancestry" value="unsure" />
+              <span>Unsure / Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Family History -->
+        <div class="form-group">
+          <label class="form-label">Do you have a family history of prostate cancer?</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="radio" name="family-hx" value="strong" id="fhx-strong" />
+              <span><strong>Yes — strong family history:</strong> One or more first-degree relatives (father, brother, or son) diagnosed with prostate cancer before age 65, OR two or more relatives on the same side of the family diagnosed at any age</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="radio" name="family-hx" value="limited" />
+              <span><strong>Yes — limited family history:</strong> A relative was diagnosed but it does not meet the above criteria</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="radio" name="family-hx" value="no" />
+              <span><strong>No</strong> — no known family history of prostate cancer</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="radio" name="family-hx" value="unknown" />
+              <span>I don't know my family history</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Breast/Ovarian Cancer History -->
+        <div class="form-group">
+          <label class="form-label">Is there a personal or family history of breast or ovarian cancer, especially at a young age?</label>
+          <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:0.5rem;">Families carrying BRCA1 or BRCA2 mutations can have increased risk of prostate cancer as well as breast and ovarian cancer.</p>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="radio" name="brca-hx" value="yes" />
+              <span>Yes</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="radio" name="brca-hx" value="no" />
+              <span>No</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="radio" name="brca-hx" value="unknown" />
+              <span>Unknown</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Germline Mutations -->
+        <div class="form-group">
+          <label class="form-label">Have you or any close family member been found to carry a high-risk gene mutation?</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" name="mutation" value="brca2" id="mut-brca2" />
+              <span>BRCA2 mutation (highest risk for prostate cancer)</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="mutation" value="brca1" />
+              <span>BRCA1 mutation</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="mutation" value="atm" />
+              <span>ATM mutation</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="mutation" value="chek2" />
+              <span>CHEK2 mutation</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="mutation" value="hoxb13" />
+              <span>HOXB13 mutation</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="mutation" value="lynch" />
+              <span>Lynch Syndrome diagnosis</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="mutation" value="none" id="mut-none" />
+              <span>None of the above / Not tested</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="text-center mt-3">
+          <button type="button" class="btn btn-primary btn-lg" id="stratify-btn" onclick="runStratification()">
+            See My Risk Category →
+          </button>
+        </div>
+      </form>
+
+      <!-- RESULTS OUTPUT -->
+      <div id="strat-result" class="hidden mt-4" role="region" aria-live="polite" aria-label="Risk stratification results">
+        <div style="border-top:2px solid var(--border);padding-top:1.5rem;">
+          <h3 style="margin-bottom:1rem;">Your Risk Stratification Result</h3>
+          <div id="strat-output"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PSA SELF-ASSESSMENT QUIZ ========== -->
+  <section class="section" id="quiz-section">
+    <div class="section-title">
+      <span class="tag">Part 2 of 2</span>
+      <h2>Is Screening Right for Me? Take the PSA Self-Assessment Quiz</h2>
+      <p>PSA screening is a personal decision. Even for men who are candidates based on age and risk, your values and preferences matter. This short quiz helps you reflect on what screening would mean for you.</p>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-title">
+        <span>📋</span> PSA Self-Assessment Quiz
+      </div>
+
+      <p style="font-size:0.9rem;color:var(--text-mid);margin-bottom:1.25rem;">Please answer each question honestly. This quiz is for reflection purposes only and not a clinical evaluation.</p>
+
+      <!-- Section A: Screening MAY be right -->
+      <div style="background:#f0f7ff;border:1px solid #b3d4f0;border-radius:var(--radius-sm);padding:1rem;margin-bottom:1.25rem;">
+        <p style="font-size:0.8rem;font-weight:700;color:var(--secondary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.75rem;">Section A — Screening may be right for you if you answer YES to both:</p>
+
+        <div class="quiz-q">
+          <input type="checkbox" id="q1" name="quiz" value="q1" style="margin-top:0.2rem;width:18px;height:18px;flex-shrink:0;accent-color:var(--secondary);" />
+          <label for="q1" class="quiz-q-text" style="cursor:pointer;">
+            <strong>Question 1:</strong> Would you accept prostate cancer treatment such as surgery or radiation therapy if your doctor recommends it?
+          </label>
+        </div>
+
+        <div class="quiz-q">
+          <input type="checkbox" id="q2" name="quiz" value="q2" style="margin-top:0.2rem;width:18px;height:18px;flex-shrink:0;accent-color:var(--secondary);" />
+          <label for="q2" class="quiz-q-text" style="cursor:pointer;">
+            <strong>Question 2:</strong> Would you be comfortable living with untreated prostate cancer if your doctor believes it can be safely monitored with "active surveillance" (watchful waiting without immediate treatment)?
+          </label>
+        </div>
+
+        <div class="alert alert-info mt-2" style="margin-bottom:0;">
+          <div class="alert-title">✅ If you answered <em>Yes</em> to BOTH questions above...</div>
+          <p>Screening may be right for you. Continue to the next section and speak with your doctor.</p>
+        </div>
+      </div>
+
+      <!-- Section B: Screening may NOT be right -->
+      <div style="background:#fff8f8;border:1px solid #f5b7b1;border-radius:var(--radius-sm);padding:1rem;margin-bottom:1.25rem;">
+        <p style="font-size:0.8rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.75rem;">Section B — Screening may not be right for you if you answer YES to either:</p>
+
+        <div class="quiz-q">
+          <input type="checkbox" id="q3" name="quiz" value="q3" style="margin-top:0.2rem;width:18px;height:18px;flex-shrink:0;accent-color:var(--red);" />
+          <label for="q3" class="quiz-q-text" style="cursor:pointer;">
+            <strong>Question 3:</strong> Are you concerned that you would feel deeply uncomfortable knowing you have a "low-risk" cancer and not treating it, even if your doctor recommends monitoring over treatment?
+          </label>
+        </div>
+
+        <div class="quiz-q">
+          <input type="checkbox" id="q4" name="quiz" value="q4" style="margin-top:0.2rem;width:18px;height:18px;flex-shrink:0;accent-color:var(--red);" />
+          <label for="q4" class="quiz-q-text" style="cursor:pointer;">
+            <strong>Question 4:</strong> If you were found to have prostate cancer, would you definitely refuse treatment (surgery or radiation) even if your doctor recommends it?
+          </label>
+        </div>
+
+        <div class="alert alert-warning mt-2" style="margin-bottom:0;">
+          <div class="alert-title">⚠️ If you answered <em>Yes</em> to EITHER question above...</div>
+          <p>Screening may not be right for you at this time. These concerns are worth discussing openly with your physician before making a decision.</p>
+        </div>
+      </div>
+
+      <!-- Quiz Action -->
+      <div class="text-center">
+        <button type="button" class="btn btn-primary" onclick="evaluateQuiz()">Evaluate My Answers →</button>
+      </div>
+
+      <!-- Quiz Result -->
+      <div id="quiz-result" class="quiz-result alert" style="display:none;margin-top:1.25rem;"></div>
+
+      <!-- Always consult doctor note -->
+      <div class="alert alert-info mt-3" style="border-left-color:var(--primary);">
+        <div class="alert-title">🩺 Talk to Your Doctor</div>
+        <p>As with all medical decisions, you are encouraged to speak with your physician about PSA prostate cancer screening and whether it may be right for you. This quiz is a tool for reflection, not a substitute for professional medical advice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SCREENING START AGE TABLE ========== -->
+  <section class="section">
+    <div class="section-title">
+      <span class="tag">Reference Guide</span>
+      <h2>Recommended Screening Start Age &amp; Frequency</h2>
+      <p>Based on AUA/SUO 2023/2026 Guidelines</p>
+    </div>
+
+    <div class="table-wrap card" style="padding:0;overflow:hidden;">
+      <table>
+        <thead>
+          <tr>
+            <th>Risk Category</th>
+            <th>Recommended Start Age</th>
+            <th>Screening Frequency</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="risk-chip green">Standard Risk</span></td>
+            <td><strong>Ages 45–50</strong> (baseline PSA)</td>
+            <td>Every 2–4 years if PSA &lt;1.0 ng/mL<br/>Annually if PSA 1–3 ng/mL</td>
+            <td>No Black ancestry, no strong family history, no known high-risk gene mutations</td>
+          </tr>
+          <tr>
+            <td><span class="risk-chip red">High Risk</span></td>
+            <td><strong>Ages 40–45</strong></td>
+            <td>Annually</td>
+            <td>Black ancestry, strong family history, OR known BRCA2/BRCA1/ATM/CHEK2/HOXB13/Lynch Syndrome mutation</td>
+          </tr>
+          <tr>
+            <td><span class="risk-chip" style="background:#f0f0f0;color:#555;">Age 70–75+ / PSA &lt;3.0</span></td>
+            <td>Consider stopping</td>
+            <td>Individualized</td>
+            <td>Very low risk of lethal disease. Discuss discontinuation with your physician through shared decision-making.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-info mt-2">
+      <div class="alert-title">📌 Stopping Rule</div>
+      <p>Men aged 60 or older with PSA &lt;1.0 ng/mL have very low risk of developing metastatic or fatal prostate cancer and may not benefit from continued screening. Men aged 75+ with PSA &lt;3.0 ng/mL are generally in this category. Discuss with your physician.</p>
+    </div>
+
+    <div class="alert alert-warning mt-2">
+      <div class="alert-title">⚠️ Baseline PSA at Age 40</div>
+      <p>For men in the High Risk category, a baseline PSA &gt;1.0 ng/mL at age 40 is a significant predictor of future life-threatening prostate cancer and warrants closer monitoring. <em>(Ref: Lilja et al., Nat Rev Cancer, 2008)</em></p>
+    </div>
+  </section>
+
+  <!-- ========== NEXT STEPS ========== -->
+  <section class="section">
+    <div class="section-title">
+      <span class="tag">Next Steps</span>
+      <h2>Ready to Interpret a PSA Result?</h2>
+    </div>
+    <div class="card" style="border-left:4px solid var(--secondary);">
+      <p>If you've already had a PSA test and want to understand what your number means — including age-adjusted thresholds, secondary biomarkers, and what questions to bring to your doctor — head to the next section.</p>
+      <div class="mt-2">
+        <a href="results.html" class="btn btn-primary">Go to PSA Results Calculator →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="disclaimer-bar">
+  <strong>Medical Disclaimer:</strong> This risk stratification is for educational purposes only. It is not a clinical diagnosis. Always discuss your results with a qualified healthcare provider before making any medical decision.
+</div>
+
+<footer class="site-footer">
+  <p><strong style="color:#cde6f7;">Prostate Screening Pathway</strong></p>
+  <p style="margin-top:0.5rem;">
+    <a href="index.html">Home</a> &bull;
+    <a href="screening.html">Who Should Be Screened</a> &bull;
+    <a href="results.html">PSA Results</a> &bull;
+    <a href="education.html">Education</a> &bull;
+    <a href="data.html">Data &amp; References</a>
+  </p>
+</footer>
+
+<script src="js/nav.js"></script>
+<script>
+/* ---- Risk Stratification Logic ---- */
+function runStratification() {
+  var age = parseInt(document.getElementById('age').value, 10);
+  var blackAncestry = document.querySelector('input[name="black-ancestry"]:checked');
+  var familyHx = document.querySelector('input[name="family-hx"]:checked');
+  var brcaHx = document.querySelector('input[name="brca-hx"]:checked');
+  var mutations = Array.from(document.querySelectorAll('input[name="mutation"]:checked')).map(function(i){return i.value;});
+
+  // Validation
+  if (!age || age < 30 || age > 100) {
+    alert('Please enter a valid age between 30 and 100.');
+    document.getElementById('age').focus();
+    return;
+  }
+  if (!blackAncestry || !familyHx) {
+    alert('Please answer all questions before continuing.');
+    return;
+  }
+
+  // Determine risk tier
+  var isHighRisk = false;
+  var highRiskReasons = [];
+
+  if (blackAncestry.value === 'yes') {
+    isHighRisk = true;
+    highRiskReasons.push('Black or African descent ancestry');
+  }
+  if (familyHx.value === 'strong') {
+    isHighRisk = true;
+    highRiskReasons.push('Strong family history of prostate cancer (first-degree relative diagnosed before age 65, or ≥2 relatives on the same side)');
+  }
+  if (brcaHx && brcaHx.value === 'yes') {
+    highRiskReasons.push('Family history of breast or ovarian cancer (possible BRCA-related risk — discuss genetic counseling with your physician)');
+  }
+  var hasMutation = mutations.length > 0 && !mutations.includes('none');
+  if (hasMutation) {
+    isHighRisk = true;
+    var mutNames = mutations.filter(function(m){return m !== 'none';}).map(function(m){
+      return {brca2:'BRCA2',brca1:'BRCA1',atm:'ATM',chek2:'CHEK2',hoxb13:'HOXB13',lynch:'Lynch Syndrome'}[m] || m;
+    });
+    highRiskReasons.push('Known high-risk gene mutation: ' + mutNames.join(', '));
+  }
+
+  var riskTier = isHighRisk ? 'high' : 'standard';
+
+  // Stopping rule
+  var isStopping = (age >= 75 && riskTier === 'standard') || (age >= 80);
+  var isLowRiskStopping = (age >= 60 && riskTier === 'standard');
+
+  // Frequency / start age
+  var startAge = riskTier === 'high' ? '40–45' : '45–50';
+  var frequency = riskTier === 'high' ? 'Annually' : 'Every 2–4 years if PSA &lt;1.0 ng/mL; annually if PSA 1–3 ng/mL';
+
+  // Build output HTML
+  var html = '';
+
+  if (isStopping) {
+    html += '<div class="alert alert-warning"><div class="alert-title">⚠️ Screening May Not Be Needed</div><p>Based on your age (' + age + '), you may be in a range where continued screening offers limited benefit for most men. Men aged 75+ with PSA &lt;3.0 ng/mL generally have very low risk of lethal prostate cancer. Please discuss with your physician whether continued screening is appropriate for your individual situation.</p></div>';
+  }
+
+  html += '<div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">';
+  html += '<div style="font-size:2.5rem;">' + (riskTier === 'high' ? '🔴' : '🟢') + '</div>';
+  html += '<div><div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-light);margin-bottom:0.25rem;">Your Risk Category</div>';
+  html += '<div style="font-size:1.75rem;font-weight:800;color:' + (riskTier === 'high' ? 'var(--red)' : 'var(--green)') + ';">' + (riskTier === 'high' ? 'HIGH RISK' : 'STANDARD RISK') + '</div></div>';
+  html += '</div>';
+
+  if (isHighRisk && highRiskReasons.length > 0) {
+    html += '<div class="alert alert-danger"><div class="alert-title">⚠️ High-Risk Factors Identified</div><ul style="margin:0.5rem 0 0 1rem;padding:0;">';
+    highRiskReasons.forEach(function(r) { html += '<li style="margin-bottom:0.25rem;color:inherit;">' + r + '</li>'; });
+    html += '</ul></div>';
+  }
+
+  html += '<div class="grid-2" style="gap:1rem;margin:1rem 0;">';
+  html += '<div class="card" style="border-left:4px solid ' + (riskTier === 'high' ? 'var(--red)' : 'var(--green)') + ';padding:1.25rem;">';
+  html += '<div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.4rem;">Recommended Start Age</div>';
+  html += '<div style="font-size:1.5rem;font-weight:800;color:var(--primary);">' + startAge + '</div>';
+  html += '</div>';
+  html += '<div class="card" style="border-left:4px solid var(--secondary);padding:1.25rem;">';
+  html += '<div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.4rem;">Screening Frequency</div>';
+  html += '<div style="font-size:0.9rem;font-weight:600;color:var(--primary);">' + frequency + '</div>';
+  html += '</div>';
+  html += '</div>';
+
+  // Age context
+  if (age < parseInt(startAge.split('–')[0], 10)) {
+    html += '<div class="alert alert-success"><div class="alert-title">✅ Not Yet Time to Screen</div><p>You are younger than the recommended starting age for your risk category. Continue healthy habits and discuss with your doctor when to begin baseline PSA testing.</p></div>';
+  } else if (!isStopping) {
+    html += '<div class="alert alert-info"><div class="alert-title">📋 What to Do Next</div><p>Based on your age (' + age + ') and risk category, you are in the recommended screening window. Ask your doctor about scheduling a PSA blood test. Complete the PSA Self-Assessment Quiz below to further reflect on whether screening aligns with your personal values.</p></div>';
+  }
+
+  html += '<div class="alert" style="background:#f0f4f8;border-left:4px solid var(--primary);"><div class="alert-title">🩺 Conversation Starter for Your Doctor</div>';
+  html += '<p>Bring these questions to your next appointment:</p>';
+  html += '<ul style="margin:0.5rem 0 0 1rem;padding:0;">';
+  if (riskTier === 'high') {
+    html += '<li style="margin-bottom:0.25rem;">"Given my risk factors, when should I start screening and how often?"</li>';
+    html += '<li style="margin-bottom:0.25rem;">"Should I consider genetic counseling given my family history?"</li>';
+  } else {
+    html += '<li style="margin-bottom:0.25rem;">"Should I have a baseline PSA test now?"</li>';
+    html += '<li style="margin-bottom:0.25rem;">"How often would you recommend I be screened?"</li>';
+  }
+  html += '<li style="margin-bottom:0.25rem;">"What would an elevated PSA result mean for me specifically?"</li>';
+  html += '<li>"What are the benefits and potential harms of PSA screening for someone like me?"</li>';
+  html += '</ul></div>';
+
+  document.getElementById('strat-output').innerHTML = html;
+  document.getElementById('strat-result').classList.remove('hidden');
+  document.getElementById('strat-result').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* ---- Quiz Logic ---- */
+function evaluateQuiz() {
+  var q1 = document.getElementById('q1').checked;
+  var q2 = document.getElementById('q2').checked;
+  var q3 = document.getElementById('q3').checked;
+  var q4 = document.getElementById('q4').checked;
+
+  var resultEl = document.getElementById('quiz-result');
+  var html = '';
+
+  if (!q1 && !q2 && !q3 && !q4) {
+    resultEl.className = 'quiz-result alert alert-warning';
+    resultEl.innerHTML = '<div class="alert-title">📋 Please Answer Some Questions First</div><p>Try answering the questions above to see your personalized reflection.</p>';
+    resultEl.style.display = 'block';
+    return;
+  }
+
+  if (q1 && q2 && !q3 && !q4) {
+    // Clear candidate
+    html = '<div class="alert-title">✅ Screening May Be Right for You</div>';
+    html += '<p>You answered <strong>Yes</strong> to both Section A questions and <strong>No</strong> to both Section B questions. Based on your responses, PSA screening aligns with your values and preferences.</p>';
+    html += '<p>If you meet the age and risk criteria (see the table above), talk to your doctor about when to begin or continue regular PSA testing.</p>';
+    html += '<a href="results.html" class="btn btn-green" style="margin-top:0.75rem;">Go to PSA Results Calculator →</a>';
+    resultEl.className = 'quiz-result alert alert-success';
+  } else if (q3 || q4) {
+    // Not a candidate
+    html = '<div class="alert-title">⚠️ Screening May Not Be Right for You</div>';
+    if (q3) html += '<p>You indicated concern about living with a low-risk cancer that does not require immediate treatment. This feeling is very common and valid. "Active surveillance" — monitoring a slow-growing cancer without immediately treating it — can cause anxiety for some men, even though it is a guideline-endorsed approach for low-risk disease.</p>';
+    if (q4) html += '<p>You indicated that you would decline treatment if prostate cancer were found. If screening results would not change your course of action, the potential harms of screening (biopsy, overdiagnosis, anxiety) may outweigh the benefits for you.</p>';
+    html += '<p>These are important concerns to share with your physician before deciding whether to screen.</p>';
+    resultEl.className = 'quiz-result alert alert-warning';
+  } else if ((q1 || q2) && (q3 || q4)) {
+    // Mixed answers
+    html = '<div class="alert-title">🤔 Your Answers Are Mixed — A Conversation Is Needed</div>';
+    html += '<p>Your responses reflect some ambivalence about screening — which is completely normal. The decision about PSA screening is deeply personal and involves balancing benefits (early cancer detection) with potential harms (unnecessary biopsy, overtreatment, anxiety).</p>';
+    html += '<p>We strongly encourage you to explore this with your physician through a shared decision-making conversation. They can help you weigh the tradeoffs based on your specific situation.</p>';
+    resultEl.className = 'quiz-result alert alert-info';
+  } else {
+    // Only some A questions
+    html = '<div class="alert-title">📋 Continue Reflecting</div>';
+    html += '<p>You have answered some questions. Screening may be appropriate for you, but the decision depends on your full set of preferences and your specific risk profile. Discuss with your physician.</p>';
+    resultEl.className = 'quiz-result alert alert-info';
+  }
+
+  resultEl.innerHTML = html;
+  resultEl.style.display = 'block';
+  resultEl.scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
+</body>
+</html>
