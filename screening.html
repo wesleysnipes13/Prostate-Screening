@@ -314,6 +314,13 @@
 var quizAnswers = { q1: null, q2: null };
 
 function selectYN(q, val) {
+  // Toggle off if already selected
+  if (quizAnswers[q] === val) {
+    quizAnswers[q] = null;
+    document.getElementById(q + '-yes').className = 'yn-btn';
+    document.getElementById(q + '-no').className = 'yn-btn';
+    return;
+  }
   quizAnswers[q] = val;
   var yBtn = document.getElementById(q + '-yes');
   var nBtn = document.getElementById(q + '-no');
@@ -457,7 +464,7 @@ function evaluateQuiz() {
   var resultEl = document.getElementById('quiz-result');
   var html = '';
 
-  if (!q1 && !q2) {
+  if (!q1 || !q2) {
     resultEl.className = 'quiz-result alert alert-warning';
     resultEl.innerHTML = '<div class="alert-title">Please Answer Both Questions First</div><p>Select Yes or No for each question above to see your personalized reflection.</p>';
     resultEl.style.display = 'block';

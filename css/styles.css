@@ -592,8 +592,8 @@ tr:hover td { background: #f8fafc; }
 }
 
 .yn-btn:hover { border-color: var(--text); color: var(--text); background: var(--bg-subtle); }
-.yn-btn.selected-yes { background: var(--green); border-color: var(--green); color: #fff; }
-.yn-btn.selected-no { background: var(--primary); border-color: var(--primary); color: #fff; }
+.yn-btn.selected-yes { background: var(--red, #c0392b); border-color: var(--red, #c0392b); color: #fff; }
+.yn-btn.selected-no { background: var(--green); border-color: var(--green); color: #fff; }
 
 /* =====================================================
    STEP INDICATOR
