@@ -10,22 +10,30 @@
   <link rel="stylesheet" href="css/styles.css" />
   <!-- Chart.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <style>
+    .picto-wrap { display:flex; flex-wrap:wrap; gap:2px; margin:0.75rem 0; }
+    .picto-person { width:18px; height:22px; }
+    .ref-list ol { padding-left:1.1rem; }
+    .ref-list li { font-size:0.8rem; color:var(--text-mid); margin-bottom:0.6rem; line-height:1.55; }
+    .ref-list li strong { font-size:0.8rem; }
+    .ref-list a { font-size:0.78rem; }
+  </style>
 </head>
 <body>
 
 <!-- =================== NAVIGATION =================== -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
+    <div class="nav-logo" aria-label="Prostate Screening Pathway">
       <div class="nav-logo-icon" aria-hidden="true">🩺</div>
       <div class="nav-logo-text">Prostate Screening Pathway<span class="nav-logo-sub">Patient Information Resource</span></div>
-    </a>
+    </div>
     <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="screening.html">Who Should Be Screened</a></li>
       <li><a href="results.html">Understand Your PSA</a></li>
       <li><a href="education.html">Further Education</a></li>
-      <li><a href="data.html">What the Data Says</a></li>
+      <li><a href="data.html" class="active">What the Data Says</a></li>
     </ul>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
@@ -34,16 +42,16 @@
 </nav>
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
   <ul role="list">
-    <li><a href="index.html">🏠 Home</a></li>
-    <li><a href="screening.html">🔍 Who Should Be Screened</a></li>
-    <li><a href="results.html">📊 Understand Your PSA</a></li>
-    <li><a href="education.html">📖 Further Education</a></li>
-    <li><a href="data.html">📈 What the Data Says</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="screening.html">Who Should Be Screened</a></li>
+    <li><a href="results.html">Understand Your PSA</a></li>
+    <li><a href="education.html">Further Education</a></li>
+    <li><a href="data.html">What the Data Says</a></li>
   </ul>
 </div>
 
 <!-- =================== PAGE HEADER =================== -->
-<header class="hero" style="padding:2.5rem 1rem 3rem;">
+<header class="hero" style="padding:2.5rem 1.25rem 3rem;">
   <div class="hero-badge">Evidence Summary</div>
   <h1>What the Data Tells Us</h1>
   <p>Patient-friendly summaries of the clinical research, interactive risk infographics, and a complete reference list — so you can understand the science behind PSA screening decisions.</p>
@@ -54,14 +62,14 @@
   <!-- Quick Nav -->
   <nav aria-label="Page sections" style="margin-bottom:2rem;">
     <div class="card" style="padding:1rem 1.25rem;">
-      <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-light);margin-bottom:0.5rem;">Jump to:</p>
+      <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-light);margin-bottom:0.5rem;">Jump to:</p>
       <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-        <a href="#key-facts" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">Key Facts</a>
-        <a href="#psa-risk-chart" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">PSA &amp; Cancer Risk</a>
-        <a href="#benefit-harm" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">Benefits vs. Harms</a>
-        <a href="#pictographs" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">Visual Risk Data</a>
-        <a href="#interactive" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">Interactive Infographic</a>
-        <a href="#references" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">References</a>
+        <a href="#key-facts" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">Key Facts</a>
+        <a href="#psa-risk-chart" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">PSA &amp; Cancer Risk</a>
+        <a href="#benefit-harm" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">Benefits vs. Harms</a>
+        <a href="#pictographs" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">Visual Risk Data</a>
+        <a href="#interactive" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">Interactive Infographic</a>
+        <a href="#references" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">References</a>
       </div>
     </div>
   </nav>
@@ -73,29 +81,30 @@
       <h2>What We Know: Key Research Findings</h2>
     </div>
     <div class="grid-2">
-      <div class="card" style="border-top:4px solid var(--green);">
-        <div style="font-size:1.75rem;margin-bottom:0.5rem;">✅</div>
+      <div class="card" style="border-top:3px solid var(--green);">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">✅</div>
         <h4>PSA Screening Reduces Prostate Cancer Mortality</h4>
         <p>The ERSPC (European Randomized Study of Screening for Prostate Cancer) found a 21% relative reduction in prostate cancer deaths in the PSA screening group after 16 years of follow-up. In high-compliance centers, the reduction was even greater.</p>
-        <p style="font-size:0.8rem;color:var(--text-light);">Source: ERSPC Trial; AUA/SUO Guidelines 2023</p>
+        <p>However, there was no change in overall mortality (death from any cause), which is why PSA screening is not recommended for everyone and requires shared decision-making with a physician.</p>
+        <p style="font-size:0.78rem;color:var(--text-light);">Source: Schröder FH et al., ERSPC Trial; AUA/SUO Guidelines 2023</p>
       </div>
-      <div class="card" style="border-top:4px solid var(--secondary);">
-        <div style="font-size:1.75rem;margin-bottom:0.5rem;">📅</div>
+      <div class="card" style="border-top:3px solid #1a5276;">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">📅</div>
         <h4>Early Detection Dramatically Improves Survival</h4>
-        <p>When prostate cancer is detected at a localized stage (confined to the prostate), the 5-year relative survival rate is nearly 100%. Once cancer has spread to distant organs (metastatic), the 5-year survival rate drops to approximately 32%.</p>
-        <p style="font-size:0.8rem;color:var(--text-light);">Source: SEER Cancer Statistics Database, 2023</p>
+        <p>When prostate cancer is detected at a localized stage (confined to the prostate), the 5-year relative survival rate exceeds 99%. Once cancer has spread to distant organs (metastatic), the 5-year survival rate drops to approximately 32%.</p>
+        <p style="font-size:0.78rem;color:var(--text-light);">Source: SEER Cancer Statistics Database (NCI), 2024</p>
       </div>
-      <div class="card" style="border-top:4px solid var(--yellow);">
-        <div style="font-size:1.75rem;margin-bottom:0.5rem;">⚖️</div>
+      <div class="card" style="border-top:3px solid var(--yellow);">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">⚖️</div>
         <h4>Overdiagnosis Is a Real Trade-Off</h4>
         <p>PSA screening leads to detection of some cancers that may never have caused symptoms or death during a man's lifetime — a phenomenon called overdiagnosis. Estimates suggest that for every prostate cancer death prevented by screening, approximately 3–5 men may be overdiagnosed and potentially overtreated.</p>
-        <p style="font-size:0.8rem;color:var(--text-light);">Source: Welch &amp; Albertsen, J Natl Cancer Inst; AUA/SUO Guidelines 2023</p>
+        <p style="font-size:0.78rem;color:var(--text-light);">Source: Welch &amp; Albertsen, J Natl Cancer Inst; AUA/SUO Guidelines 2023</p>
       </div>
-      <div class="card" style="border-top:4px solid var(--red);">
-        <div style="font-size:1.75rem;margin-bottom:0.5rem;">⚡</div>
+      <div class="card" style="border-top:3px solid var(--red);">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">⚡</div>
         <h4>Black Men Face Disproportionate Risk</h4>
-        <p>Black men are approximately 1.7 times more likely to develop prostate cancer and 2.1 times more likely to die from it compared to white men. Black men also tend to develop cancer at younger ages and with more aggressive tumor characteristics — making earlier screening particularly important for this group.</p>
-        <p style="font-size:0.8rem;color:var(--text-light);">Source: ACS Cancer Facts &amp; Figures; AUA Guidelines Ref 3, 4</p>
+        <p>Black men are approximately 1.7 times more likely to develop prostate cancer and 2.1 times more likely to die from it compared to white men. Black men also tend to develop cancer at younger ages and with more aggressive tumor characteristics — making earlier screening particularly important.</p>
+        <p style="font-size:0.78rem;color:var(--text-light);">Source: ACS Cancer Facts &amp; Figures 2024; AUA Guidelines</p>
       </div>
     </div>
   </section>
@@ -112,21 +121,21 @@
         <canvas id="psaCancerChart" aria-label="Bar chart showing cancer probability at different PSA levels" role="img"></canvas>
       </div>
       <div class="alert alert-info mt-3">
-        <div class="alert-title">💡 How to Read This Chart</div>
-        <p>These percentages represent <em>all</em> prostate cancers detected on biopsy, including low-grade (Grade Group 1) cancers that may never require treatment. The percentage of <em>clinically significant</em> (Grade Group ≥2) cancers is generally lower. Secondary biomarkers like PHI and 4Kscore are designed specifically to identify clinically significant disease.</p>
+        <div class="alert-title">How to Read This Chart</div>
+        <p>These percentages represent <em>all</em> prostate cancers detected on biopsy, including low-grade (Grade Group 1) cancers that may never require treatment. The percentage of <em>clinically significant</em> (Grade Group ≥2) cancers is lower. Secondary biomarkers like PHI and 4Kscore are designed specifically to identify clinically significant disease.</p>
       </div>
       <div class="table-wrap mt-3">
         <table>
-          <thead><tr><th>PSA Range (ng/mL)</th><th>Approximate Cancer Probability</th><th>Clinically Significant Cancer (%)</th><th>Guideline Recommendation</th></tr></thead>
+          <thead><tr><th>PSA Range (ng/mL)</th><th>Any Cancer on Biopsy</th><th>Clinically Significant Cancer (Grade ≥2)</th><th>Guideline Recommendation</th></tr></thead>
           <tbody>
-            <tr><td>0–1.0</td><td>~8%</td><td>~1–2%</td><td>Routine follow-up; low risk</td></tr>
-            <tr><td>1.0–2.5</td><td>~17%</td><td>~4–6%</td><td>Monitor; consider earlier rescreening if high-risk</td></tr>
-            <tr><td>2.5–4.0</td><td>~25%</td><td>~8–12%</td><td>Consider secondary biomarkers or DRE</td></tr>
+            <tr><td>0–2.5</td><td>~8–10%</td><td>~1–2%</td><td>Routine follow-up; low risk</td></tr>
+            <tr><td>2.5–4.0</td><td>~25%</td><td>~8–10%</td><td>Consider secondary biomarkers; discuss with physician</td></tr>
             <tr><td>4.0–10.0</td><td>~30–35%</td><td>~15–20%</td><td>Secondary biomarkers recommended before biopsy decision</td></tr>
             <tr><td>&gt;10.0</td><td>~50–67%</td><td>~30–40%</td><td>Prompt urological evaluation; MRI usually indicated</td></tr>
           </tbody>
         </table>
       </div>
+      <p style="font-size:0.75rem;color:var(--text-light);margin-top:0.75rem;">Sources: Thompson IM et al. (PCPT), N Engl J Med 2004; Catalona WJ et al., JAMA 1998; AUA/SUO Guidelines 2023</p>
     </div>
   </section>
 
@@ -139,22 +148,22 @@
     </div>
 
     <div class="grid-2">
-      <div class="card" style="border-top:4px solid var(--green);">
+      <div class="card" style="border-top:3px solid var(--green);">
         <h3 style="color:var(--green);margin-bottom:1rem;">✅ Potential Benefits</h3>
         <ul style="padding-left:1.25rem;">
-          <li style="margin-bottom:0.6rem;"><strong>Earlier cancer detection:</strong> Catching cancer when it is confined to the prostate, when treatment is most effective and curable.</li>
-          <li style="margin-bottom:0.6rem;"><strong>Reduced cancer mortality:</strong> Long-term trials show a statistically significant reduction in prostate cancer deaths in screened populations.</li>
-          <li style="margin-bottom:0.6rem;"><strong>Peace of mind:</strong> A normal PSA result provides reassurance, and knowing your baseline helps track changes over time.</li>
-          <li><strong>Less aggressive treatment:</strong> Cancers caught early may be treated with less extensive procedures, reducing side effects.</li>
+          <li style="margin-bottom:0.6rem;"><strong>Earlier cancer detection:</strong> Catching cancer when it is confined to the prostate, when treatment is most effective and curable (5-year survival &gt;99% for localized disease).</li>
+          <li style="margin-bottom:0.6rem;"><strong>Reduced cancer mortality:</strong> The ERSPC trial showed a 21% relative reduction in prostate cancer deaths with PSA screening over 16 years.</li>
+          <li style="margin-bottom:0.6rem;"><strong>Baseline tracking:</strong> A normal PSA provides reassurance and allows changes to be tracked over time.</li>
+          <li><strong>Less aggressive treatment:</strong> Cancers caught early may be managed with active surveillance or less extensive procedures.</li>
         </ul>
       </div>
-      <div class="card" style="border-top:4px solid var(--red);">
+      <div class="card" style="border-top:3px solid var(--red);">
         <h3 style="color:var(--red);margin-bottom:1rem;">⚠️ Potential Harms</h3>
         <ul style="padding-left:1.25rem;">
-          <li style="margin-bottom:0.6rem;"><strong>Overdiagnosis:</strong> Detection of slow-growing cancers that would never have caused symptoms or death — leading to unnecessary treatment and anxiety.</li>
-          <li style="margin-bottom:0.6rem;"><strong>Overtreatment:</strong> Treatment side effects (incontinence, erectile dysfunction) in men who may not have needed treatment.</li>
-          <li style="margin-bottom:0.6rem;"><strong>False positives:</strong> An elevated PSA is not cancer — but it can lead to anxiety, additional tests, and sometimes unnecessary biopsy.</li>
-          <li><strong>Biopsy risks:</strong> Prostate biopsy carries real but small risks (see below).</li>
+          <li style="margin-bottom:0.6rem;"><strong>Overdiagnosis:</strong> Detection of slow-growing cancers (Grade Group 1) that would never have caused symptoms or death — leading to unnecessary anxiety and potential overtreatment.</li>
+          <li style="margin-bottom:0.6rem;"><strong>Overtreatment:</strong> Side effects of surgery (incontinence, erectile dysfunction) or radiation in men whose cancer may never have needed treatment.</li>
+          <li style="margin-bottom:0.6rem;"><strong>False positives:</strong> An elevated PSA is not cancer — but it can lead to anxiety, additional testing, and sometimes unnecessary biopsy.</li>
+          <li><strong>Biopsy risks:</strong> Prostate biopsy carries real but small risks including infection and bleeding (see pictographs below).</li>
         </ul>
       </div>
     </div>
@@ -165,48 +174,69 @@
     <div class="section-title">
       <span class="tag">Visual Risk Data</span>
       <h2>Understanding Risk With Pictographs</h2>
-      <p>Each figure below represents 1 man in 100. Highlighted figures represent men affected by the outcome shown.</p>
+      <p>Each figure below represents 1 man in 100. Colors show the proportion of men affected by each outcome.</p>
     </div>
 
-    <!-- Pictograph 1: Lifetime prostate cancer risk -->
+    <!-- Pictograph 1: Lifetime Cancer Risk — Diagnosis + Mortality -->
     <div class="card mb-4">
-      <h3 style="margin-bottom:0.5rem;">Lifetime Risk of Being Diagnosed With Prostate Cancer</h3>
-      <p style="font-size:0.875rem;color:var(--text-mid);margin-bottom:1rem;">Among 100 American men, approximately how many will be diagnosed with prostate cancer in their lifetime?</p>
-      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start;">
+      <h3 style="margin-bottom:0.5rem;">Lifetime Prostate Cancer Risk: Diagnosis and Mortality</h3>
+      <p style="font-size:0.875rem;color:var(--text-mid);margin-bottom:1rem;">Out of 100 men, how many will be diagnosed with prostate cancer in their lifetime — and of those, how many will die from it?</p>
+
+      <div style="display:flex;gap:2rem;flex-wrap:wrap;align-items:flex-start;">
         <div>
-          <p style="font-size:0.8rem;font-weight:700;color:var(--text-light);margin-bottom:0.5rem;">All Men (1 in 8 = 12-13 in 100)</p>
-          <div class="pictograph" style="max-width:280px;" id="pictograph-all" aria-label="12 out of 100 men shaded, representing the approximately 12% lifetime risk of prostate cancer for all men"></div>
+          <p style="font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:0.4rem;">All American Men</p>
+          <div class="picto-wrap" id="picto-all" style="max-width:216px;" aria-label="13 in 100 men diagnosed (blue), 2 in 100 die from prostate cancer (red)"></div>
+          <div style="font-size:0.78rem;margin-top:0.4rem;">
+            <span style="color:#1a5276;font-weight:700;">■ 13 diagnosed</span>
+            &nbsp;
+            <span style="color:var(--red);font-weight:700;">■ 2 die from prostate cancer</span>
+          </div>
         </div>
         <div>
-          <p style="font-size:0.8rem;font-weight:700;color:var(--red);margin-bottom:0.5rem;">Black Men (1 in 6 = ~17 in 100)</p>
-          <div class="pictograph" style="max-width:280px;" id="pictograph-black" aria-label="17 out of 100 men shaded, representing the approximately 17% lifetime risk of prostate cancer for Black men"></div>
+          <p style="font-size:0.82rem;font-weight:700;color:var(--red);margin-bottom:0.4rem;">Black Men</p>
+          <div class="picto-wrap" id="picto-black" style="max-width:216px;" aria-label="17 in 100 Black men diagnosed (blue), 5 in 100 die from prostate cancer (red)"></div>
+          <div style="font-size:0.78rem;margin-top:0.4rem;">
+            <span style="color:#1a5276;font-weight:700;">■ 17 diagnosed</span>
+            &nbsp;
+            <span style="color:var(--red);font-weight:700;">■ 5 die from prostate cancer</span>
+          </div>
         </div>
       </div>
-      <p style="font-size:0.75rem;color:var(--text-light);margin-top:0.75rem;margin-bottom:0;">🔵 Blue = will be diagnosed with prostate cancer &nbsp;|&nbsp; ⬜ Gray = will not</p>
+      <p style="font-size:0.72rem;color:var(--text-light);margin-top:0.75rem;margin-bottom:0;">
+        Sources: American Cancer Society Cancer Facts &amp; Figures 2024; Prostate Cancer Foundation.<br/>
+        Red figures are a subset of blue figures (they were diagnosed and later died from prostate cancer). Gray figures will not develop prostate cancer.
+      </p>
     </div>
 
-    <!-- Pictograph 2: Biopsy complications -->
+    <!-- Pictograph 2: Biopsy Risks -->
     <div class="card mb-4">
       <h3 style="margin-bottom:0.5rem;">Risks of Prostate Biopsy (per 100 biopsies)</h3>
-      <p style="font-size:0.875rem;color:var(--text-mid);margin-bottom:1rem;">A prostate biopsy is generally a safe procedure but carries real risks. These estimates are for systematic biopsy; MRI-targeted biopsy may have a slightly different profile.</p>
-      <div class="grid-3" style="gap:1rem;">
-        <div style="text-align:center;">
-          <div style="font-size:2.5rem;margin-bottom:0.25rem;">🦠</div>
-          <div style="font-size:1.5rem;font-weight:800;color:var(--red);">1–3</div>
-          <div style="font-size:0.825rem;font-weight:600;color:var(--text);">in 100 men</div>
-          <div style="font-size:0.8rem;color:var(--text-mid);margin-top:0.25rem;">Develop serious infection (sepsis) requiring hospitalization</div>
+      <p style="font-size:0.875rem;color:var(--text-mid);margin-bottom:1.25rem;">A prostate biopsy is generally a safe procedure but carries real risks. These estimates reflect transrectal ultrasound-guided biopsy; transperineal biopsy has a lower infection rate.</p>
+
+      <div class="grid-3" style="gap:1.25rem;">
+        <!-- Sepsis -->
+        <div>
+          <p style="font-size:0.82rem;font-weight:700;color:var(--red);margin-bottom:0.25rem;">Serious Infection / Sepsis</p>
+          <p style="font-size:0.78rem;color:var(--text-mid);margin-bottom:0.4rem;">Requiring hospitalization</p>
+          <div class="picto-wrap" id="picto-sepsis" style="max-width:216px;"></div>
+          <p style="font-size:0.875rem;font-weight:800;color:var(--red);">~1–2 in 100</p>
+          <p style="font-size:0.75rem;color:var(--text-light);">Sources: Loeb S et al., J Urol 2013; Williamson DA et al., Lancet Infect Dis 2013</p>
         </div>
-        <div style="text-align:center;">
-          <div style="font-size:2.5rem;margin-bottom:0.25rem;">🩸</div>
-          <div style="font-size:1.5rem;font-weight:800;color:var(--yellow);">10–20</div>
-          <div style="font-size:0.825rem;font-weight:600;color:var(--text);">in 100 men</div>
-          <div style="font-size:0.8rem;color:var(--text-mid);margin-top:0.25rem;">Experience notable rectal bleeding or blood in urine (usually resolves on its own)</div>
+        <!-- Bleeding -->
+        <div>
+          <p style="font-size:0.82rem;font-weight:700;color:var(--yellow);margin-bottom:0.25rem;">Notable Bleeding</p>
+          <p style="font-size:0.78rem;color:var(--text-mid);margin-bottom:0.4rem;">Hematuria or rectal bleeding (usually self-resolving)</p>
+          <div class="picto-wrap" id="picto-bleed" style="max-width:216px;"></div>
+          <p style="font-size:0.875rem;font-weight:800;color:var(--yellow);">~10–15 in 100</p>
+          <p style="font-size:0.75rem;color:var(--text-light);">Source: Raaijmakers R et al., Eur Urol 2002; AUA/SUO Guideline 2023</p>
         </div>
-        <div style="text-align:center;">
-          <div style="font-size:2.5rem;margin-bottom:0.25rem;">😣</div>
-          <div style="font-size:1.5rem;font-weight:800;color:var(--secondary);">20–30</div>
-          <div style="font-size:0.825rem;font-weight:600;color:var(--text);">in 100 men</div>
-          <div style="font-size:0.8rem;color:var(--text-mid);margin-top:0.25rem;">Experience significant pain, discomfort, or urinary symptoms (usually transient)</div>
+        <!-- Pain -->
+        <div>
+          <p style="font-size:0.82rem;font-weight:700;color:#b85b00;margin-bottom:0.25rem;">Pain / Urinary Symptoms</p>
+          <p style="font-size:0.78rem;color:var(--text-mid);margin-bottom:0.4rem;">Significant but usually transient</p>
+          <div class="picto-wrap" id="picto-pain" style="max-width:216px;"></div>
+          <p style="font-size:0.875rem;font-weight:800;color:#b85b00;">~20–25 in 100</p>
+          <p style="font-size:0.75rem;color:var(--text-light);">Source: Aus G et al., Eur Urol 2005; Crundwell MC et al., BJU Int 1999</p>
         </div>
       </div>
     </div>
@@ -219,7 +249,7 @@
         <div>
           <div style="display:flex;justify-content:space-between;margin-bottom:0.25rem;">
             <span style="font-size:0.85rem;font-weight:700;color:var(--green);">Localized Stage</span>
-            <span style="font-size:0.85rem;font-weight:800;color:var(--green);">~99%</span>
+            <span style="font-size:0.85rem;font-weight:800;color:var(--green);">&gt;99%</span>
           </div>
           <div class="progress-wrap"><div class="progress-bar green" style="width:99%;"></div></div>
           <p style="font-size:0.775rem;color:var(--text-light);margin-top:0.25rem;">Cancer confined to the prostate. Most common when detected by PSA screening.</p>
@@ -241,6 +271,7 @@
           <p style="font-size:0.775rem;color:var(--text-light);margin-top:0.25rem;">Spread to bones, distant organs. PSA screening aims to prevent men from reaching this stage.</p>
         </div>
       </div>
+      <p style="font-size:0.72rem;color:var(--text-light);margin-top:0.75rem;margin-bottom:0;">Source: SEER Cancer Statistics Database (NCI), 2024</p>
     </div>
   </section>
 
@@ -249,7 +280,7 @@
     <div class="section-title">
       <span class="tag">Interactive</span>
       <h2>Explore the Risks: High PSA vs. Biopsy Risks vs. Treatment Side Effects</h2>
-      <p>Use this interactive tool to compare the risks of cancer if your PSA is elevated against the risks of the workup and treatment itself. Adjust the PSA range to see how risks change.</p>
+      <p>Compare the risk of finding cancer at different PSA levels against the risks of the biopsy procedure and surgical treatment. Select a PSA range to see how cancer risk changes — note that biopsy and treatment side effect risks remain approximately constant regardless of PSA level.</p>
     </div>
 
     <div class="card">
@@ -264,8 +295,12 @@
         </select>
       </div>
 
-      <div class="chart-container" style="height:360px;max-width:700px;">
-        <canvas id="riskCompareChart" aria-label="Grouped bar chart comparing cancer risk, mortality risk, and treatment side effect risks" role="img"></canvas>
+      <div class="chart-container" style="height:380px;max-width:700px;">
+        <canvas id="riskCompareChart" aria-label="Grouped bar chart comparing cancer risk, biopsy risks, and treatment side effect risks" role="img"></canvas>
+      </div>
+
+      <div class="alert alert-info mt-3" style="margin-bottom:0;">
+        <p style="font-size:0.78rem;margin-bottom:0;"><strong>Note:</strong> Biopsy sepsis risk (~2%), biopsy bleeding risk (~12%), and post-surgery incontinence (~18%) and erectile dysfunction (~55%) are approximately the same regardless of PSA level — they are procedure-related, not PSA-level-dependent. Cancer risk and cancer mortality risk are what change with PSA level.</p>
       </div>
 
       <!-- Dynamic text summary -->
@@ -289,35 +324,35 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>ERSPC</strong><br/><span style="font-size:0.775rem;color:var(--text-light);">European, 160,000 men</span></td>
-            <td>21% relative reduction in prostate cancer mortality in screened group</td>
+            <td><strong>ERSPC</strong><br/><span style="font-size:0.75rem;color:var(--text-light);">European, ~182,000 men</span></td>
+            <td>21% relative reduction in prostate cancer mortality in screened group; no change in overall mortality</td>
             <td>16 years</td>
-            <td>PSA screening reduces cancer deaths, but requires long-term follow-up to demonstrate benefit</td>
+            <td>PSA screening reduces cancer deaths but requires long-term follow-up to demonstrate benefit; does not improve all-cause mortality</td>
           </tr>
           <tr>
-            <td><strong>PLCO</strong><br/><span style="font-size:0.775rem;color:var(--text-light);">US, 76,000 men</span></td>
+            <td><strong>PLCO</strong><br/><span style="font-size:0.75rem;color:var(--text-light);">US, 76,000 men</span></td>
             <td>No significant difference in prostate cancer mortality</td>
             <td>15 years</td>
-            <td>Results likely affected by high contamination rate in control arm (many "unscreened" men had PSA tests)</td>
+            <td>Results likely affected by high contamination rate in the control arm — many "unscreened" men had already had PSA tests before enrollment</td>
           </tr>
           <tr>
-            <td><strong>SPCG-4</strong><br/><span style="font-size:0.775rem;color:var(--text-light);">Sweden, pre-PSA era</span></td>
+            <td><strong>SPCG-4</strong><br/><span style="font-size:0.75rem;color:var(--text-light);">Sweden, pre-PSA era</span></td>
             <td>Radical prostatectomy reduced cancer mortality vs. watchful waiting</td>
             <td>23 years</td>
-            <td>Confirms benefit of treatment for localized prostate cancer, particularly in younger men</td>
+            <td>Confirms benefit of treatment for localized prostate cancer, particularly in younger men with moderate-risk disease</td>
           </tr>
           <tr>
-            <td><strong>PROTEC-T</strong><br/><span style="font-size:0.775rem;color:var(--text-light);">UK, 1,643 men</span></td>
-            <td>Surgery, radiation, and active monitoring showed similar low mortality at 10 years (for PSA-detected cancer)</td>
-            <td>10–15 years</td>
-            <td>PSA-detected cancers often have excellent outcomes regardless of initial treatment choice; long-term follow-up needed</td>
+            <td><strong>ProtecT</strong><br/><span style="font-size:0.75rem;color:var(--text-light);">UK, 1,643 men</span></td>
+            <td>Surgery, radiation, and active monitoring showed similar low prostate cancer mortality at 15 years (PSA-detected cancers)</td>
+            <td>15 years</td>
+            <td>PSA-detected cancers often have excellent outcomes regardless of initial treatment; highlights importance of avoiding overtreatment of low-grade disease</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="alert alert-info mt-2">
-      <div class="alert-title">💡 Why the Trials Seem Contradictory</div>
-      <p>The PLCO trial had significant contamination (many men in the "unscreened" arm had already had PSA tests before or during the trial). When researchers account for this, the mortality benefit of screening becomes clearer. The ERSPC trial, with stricter methodology, shows the clearest benefit. Both AUA/SUO guidelines acknowledge this nuance.</p>
+      <div class="alert-title">Why the Trials Seem Contradictory</div>
+      <p>The PLCO trial had significant contamination — many men in the "unscreened" arm had already received PSA tests before or during the trial, diluting any survival benefit. The ERSPC trial, with stricter methodology, shows the clearest reduction in prostate cancer mortality. Both AUA/SUO guidelines acknowledge this nuance and note that the benefit of screening takes at least 7–10 years to materialize.</p>
     </div>
   </section>
 
@@ -326,65 +361,65 @@
     <div class="section-title">
       <span class="tag">Clinical References</span>
       <h2>Peer-Reviewed References</h2>
-      <p>All clinical content on this website is based on or derived from the following peer-reviewed sources.</p>
+      <p style="font-size:0.875rem;">All clinical content on this website is based on or derived from the following peer-reviewed sources.</p>
     </div>
 
-    <div class="card">
-      <ol style="padding-left:1.25rem;line-height:1.8;">
-        <li style="margin-bottom:1rem;">
+    <div class="card ref-list">
+      <ol>
+        <li>
           <strong>Wei JT, Barocas D, Carlsson S, et al.</strong> Early Detection of Prostate Cancer: AUA/SUO Guideline Part I. <em>J Urol.</em> 2023;210(1):46–53.
-          <a href="https://pubmed.ncbi.nlm.nih.gov/37096583/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMID: 37096583 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">Primary guideline reference — risk stratification, PSA thresholds, stopping rules, shared decision-making</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/37096583/" target="_blank" rel="noopener noreferrer">PMID: 37096583 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">Primary guideline — risk stratification, PSA thresholds, stopping rules, shared decision-making</span>
         </li>
-        <li style="margin-bottom:1rem;">
-          <strong>Lilja H, Ulmert D, Vickers AJ.</strong> Prostate-specific antigen and prostate cancer: prediction, detection and monitoring. <em>Nat Rev Cancer.</em> 2008;8(4):268–78.
-          <a href="https://pubmed.ncbi.nlm.nih.gov/18292776/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMID: 18292776 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">Baseline PSA at age 40 as predictor of future lethal cancer; long-term PSA trajectory data</span>
-        </li>
-        <li style="margin-bottom:1rem;">
-          <strong>Agrawal R, Sabale V, Ahmad S.</strong> AUA Guidelines for Screening of Prostate Cancer 2023. <em>J Pharm Bioallied Sci.</em> 2025;17(Suppl 2):S1976–S1977.
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12244747/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMC12244747 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">Commentary and overview of AUA 2023 guidelines, including Black ancestry risk</span>
-        </li>
-        <li style="margin-bottom:1rem;">
-          <strong>Germanos G, Tayeb S, Boufadel DF, et al.</strong> Screening guidelines for individuals at increased risk for prostate cancer. <em>Can Urol Assoc J.</em> 2024;18(10).
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11477514/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMC11477514 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">High-risk individuals including germline mutation carriers and family history considerations</span>
-        </li>
-        <li style="margin-bottom:1rem;">
-          <strong>Catalona WJ, Partin AW, Slawin KM, et al.</strong> Use of the percentage of free prostate-specific antigen to enhance differentiation of prostate cancer from benign prostatic disease. <em>JAMA.</em> 1998;279(19):1542–7.
-          <a href="https://pubmed.ncbi.nlm.nih.gov/9605898/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMID: 9605898 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">Foundational free/total PSA ratio data; ~50–56% cancer probability at %fPSA &lt;10% in 4–10 ng/mL range</span>
-        </li>
-        <li style="margin-bottom:1rem;">
-          <strong>Vickers AJ, Savage CJ, Lilja H, et al.</strong> Prostate-specific antigen velocity for early detection of prostate cancer: result from a large, representative, population-based cohort. <em>Eur Urol.</em> 2009;56(2):234–9.
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2891354/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMC2891354 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">PSA velocity — limited additive value beyond PSA level alone as standalone trigger</span>
-        </li>
-        <li style="margin-bottom:1rem;">
+        <li>
           <strong>Wei JT, Barocas D, Carlsson S, et al.</strong> Early Detection of Prostate Cancer: AUA/SUO Guideline Part II. <em>J Urol.</em> 2023;210(1):54–63.
-          <a href="https://pubmed.ncbi.nlm.nih.gov/37096584/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMID: 37096584 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">Secondary biomarkers, mpMRI, PI-RADS, biopsy decision frameworks</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/37096584/" target="_blank" rel="noopener noreferrer">PMID: 37096584 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">Secondary biomarkers, mpMRI, PI-RADS, biopsy decision frameworks</span>
         </li>
-        <li style="margin-bottom:1rem;">
+        <li>
+          <strong>Schröder FH, Hugosson J, Roobol MJ, et al. (ERSPC).</strong> Screening and prostate cancer mortality: results of the European Randomised Study of Screening for Prostate Cancer at 13 years. <em>Lancet.</em> 2014;384(9959):2027–35.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/25108889/" target="_blank" rel="noopener noreferrer">PMID: 25108889 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">ERSPC — 21% relative reduction in prostate cancer mortality; no change in overall mortality</span>
+        </li>
+        <li>
+          <strong>Thompson IM, Pauler DK, Goodman PJ, et al.</strong> Prevalence of prostate cancer among men with a PSA level ≤4.0 ng per milliliter. <em>N Engl J Med.</em> 2004;350(22):2239–46.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/15163773/" target="_blank" rel="noopener noreferrer">PMID: 15163773 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">PCPT — cancer prevalence at all PSA levels; basis for cancer probability estimates</span>
+        </li>
+        <li>
+          <strong>Lilja H, Ulmert D, Vickers AJ.</strong> Prostate-specific antigen and prostate cancer: prediction, detection and monitoring. <em>Nat Rev Cancer.</em> 2008;8(4):268–78.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/18292776/" target="_blank" rel="noopener noreferrer">PMID: 18292776 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">Baseline PSA at age 40 as predictor of future lethal cancer</span>
+        </li>
+        <li>
+          <strong>Catalona WJ, Partin AW, Slawin KM, et al.</strong> Use of the percentage of free prostate-specific antigen to enhance differentiation of prostate cancer from benign prostatic disease. <em>JAMA.</em> 1998;279(19):1542–7.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/9605898/" target="_blank" rel="noopener noreferrer">PMID: 9605898 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">Foundational free/total PSA ratio data in the 4–10 ng/mL range</span>
+        </li>
+        <li>
+          <strong>Ficarra V, Novara G, Rosen RC, et al.</strong> Systematic review and meta-analysis of studies reporting urinary continence recovery after robot-assisted radical prostatectomy. <em>Eur Urol.</em> 2012;62(3):405–17.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/22749958/" target="_blank" rel="noopener noreferrer">PMID: 22749958 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">Post-surgical incontinence rates; ~84% continent at 12 months (i.e., ~16% incontinent)</span>
+        </li>
+        <li>
+          <strong>Loeb S, Carter HB, Berndt SI, et al.</strong> Complications after prostate biopsy: data from SEER-Medicare. <em>J Urol.</em> 2011;186(5):1830–4.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/21944136/" target="_blank" rel="noopener noreferrer">PMID: 21944136 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">Biopsy complication rates — sepsis, bleeding, urinary retention in a large population cohort</span>
+        </li>
+        <li>
           <strong>Tosoian JJ, Druskin SC, Andreas D, et al.</strong> Use of the Prostate Health Index for detection of prostate cancer: results from a large academic practice. <em>Prostate Cancer Prostatic Dis.</em> 2017;20(2):228–33.
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5895603/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMC5895603 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">PHI performance in real-world academic setting; reduction in unnecessary biopsies</span>
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5895603/" target="_blank" rel="noopener noreferrer">PMC5895603 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">PHI performance; ~30% reduction in unnecessary biopsies</span>
         </li>
-        <li style="margin-bottom:1rem;">
-          <strong>Loeb S, Sanda MG, Broyles DL, et al.</strong> The prostate health index selectively identifies clinically significant prostate cancer. <em>J Urol.</em> 2015;193(4):1163–9.
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4696043/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMC4696043 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">PHI superiority over total PSA and %fPSA for Grade Group ≥2 cancer detection</span>
-        </li>
-        <li style="margin-bottom:1rem;">
+        <li>
           <strong>Nordström T, Vickers A, Assel M, et al.</strong> Comparison between the four-kallikrein panel and Prostate Health Index for predicting prostate cancer. <em>Eur Urol.</em> 2015;68(2):207–13.
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4503229/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMC4503229 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">Head-to-head comparison of 4Kscore vs. PHI — comparable performance; neither clearly superior</span>
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4503229/" target="_blank" rel="noopener noreferrer">PMC4503229 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">4Kscore vs. PHI head-to-head — comparable performance</span>
         </li>
-        <li style="margin-bottom:0;">
-          <strong>Tosoian JJ, et al.</strong> Biomarkers for detection of clinically significant prostate cancer: contemporary clinical data and future directions. <em>Front Oncol.</em> 2021;11.
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8350244/" target="_blank" rel="noopener noreferrer" style="font-size:0.825rem;"> PMC8350244 ↗</a>
-          <br/><span style="font-size:0.825rem;color:var(--text-light);">Comprehensive review of novel biomarkers including ExoDx, SelectMDx, MiPS</span>
+        <li>
+          <strong>Hamdy FC, Donovan JL, Lane JA, et al. (ProtecT).</strong> Fifteen-year outcomes after monitoring, surgery, or radiotherapy for prostate cancer. <em>N Engl J Med.</em> 2023;388(17):1547–58.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/37066659/" target="_blank" rel="noopener noreferrer">PMID: 37066659 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">ProtecT 15-year follow-up — similar prostate cancer mortality across all three arms; more metastases with monitoring</span>
         </li>
       </ol>
     </div>
@@ -392,18 +427,18 @@
 
   <!-- External Calculators -->
   <section class="section">
-    <div class="card" style="border-left:4px solid var(--secondary);">
+    <div class="card" style="border-left:3px solid #111;">
       <h3 style="margin-bottom:0.75rem;">Validated External Risk Calculators</h3>
-      <p>These tools, referenced in the AUA guidelines, allow more detailed risk estimation using multiple clinical variables. They are designed for use with your physician.</p>
+      <p style="font-size:0.875rem;">These tools, referenced in the AUA guidelines, allow more detailed risk estimation using multiple clinical variables. They are designed for use with your physician.</p>
       <div class="grid-2 mt-2" style="gap:0.75rem;">
         <div class="card" style="padding:1rem;">
           <h4 style="margin-bottom:0.4rem;">PCPTRC 2.0</h4>
-          <p style="font-size:0.875rem;">Prostate Cancer Prevention Trial Risk Calculator — uses PSA, DRE, family history, and biopsy history to estimate probability of cancer on biopsy.</p>
+          <p style="font-size:0.85rem;">Prostate Cancer Prevention Trial Risk Calculator — uses PSA, family history, and biopsy history to estimate probability of cancer on biopsy.</p>
           <a href="https://riskcalc.org/PCPTRC/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:0.5rem;">Open PCPTRC 2.0 ↗</a>
         </div>
         <div class="card" style="padding:1rem;">
           <h4 style="margin-bottom:0.4rem;">ERSPC Risk Calculator 4</h4>
-          <p style="font-size:0.875rem;">European Randomized Study of Screening for Prostate Cancer — uses PSA, DRE, transrectal ultrasound volume, and other parameters.</p>
+          <p style="font-size:0.85rem;">European Randomized Study of Screening for Prostate Cancer — uses PSA, transrectal ultrasound volume, and other parameters.</p>
           <a href="https://www.prostatecancer-riskcalculator.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:0.5rem;">Open ERSPC Calculator ↗</a>
         </div>
       </div>
@@ -413,11 +448,11 @@
 </main>
 
 <div class="disclaimer-bar">
-  <strong>Medical Disclaimer:</strong> Data and statistics presented here are derived from peer-reviewed clinical literature as cited. Individual risk may differ from population averages. This information does not constitute medical advice. Always discuss your personal risk and screening decisions with a qualified healthcare provider.
+  <strong>Medical Disclaimer:</strong> This website is for educational and informational purposes only and does not constitute medical advice, diagnosis, or treatment. Data and statistics are derived from peer-reviewed clinical literature as cited. Individual risk may differ from population averages.
 </div>
 
 <footer class="site-footer">
-  <p><strong style="color:#cde6f7;">Prostate Screening Pathway</strong></p>
+  <p><strong style="color:#eee;">Prostate Screening Pathway</strong></p>
   <p style="margin-top:0.5rem;">
     <a href="index.html">Home</a> &bull; <a href="screening.html">Who Should Be Screened</a> &bull;
     <a href="results.html">PSA Results</a> &bull; <a href="education.html">Education</a> &bull; <a href="data.html">Data &amp; References</a>
@@ -427,32 +462,59 @@
 <script src="js/nav.js"></script>
 <script>
 /* ============================================================
-   Data Page — Chart.js Visualizations
+   SVG Person Helper
    ============================================================ */
+function svgPerson(color) {
+  return '<svg class="picto-person" viewBox="0 0 18 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+    + '<circle cx="9" cy="5.5" r="4" fill="' + color + '"/>'
+    + '<path d="M1.5 21 Q1.5 12.5 9 12.5 Q16.5 12.5 16.5 21 Z" fill="' + color + '"/>'
+    + '</svg>';
+}
 
-// ---- PSA vs Cancer Risk Bar Chart ----
+function buildPicto(containerId, total, counts, colors) {
+  // counts and colors are parallel arrays: [{n, color}, ...]
+  var container = document.getElementById(containerId);
+  if (!container) return;
+  var html = '';
+  var cursor = 0;
+  counts.forEach(function(segment) {
+    for (var i = 0; i < segment.n; i++) {
+      html += svgPerson(segment.color);
+      cursor++;
+    }
+  });
+  // Fill remainder with gray
+  for (var j = cursor; j < total; j++) {
+    html += svgPerson('#d0d5db');
+  }
+  container.innerHTML = html;
+}
+
+/* ============================================================
+   PSA vs Cancer Risk Bar Chart
+   ============================================================ */
 (function() {
   var ctx = document.getElementById('psaCancerChart').getContext('2d');
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['PSA 0–1.0', 'PSA 1.0–2.5', 'PSA 2.5–4.0', 'PSA 4.0–10.0', 'PSA >10.0'],
+      labels: ['PSA 0–2.5', 'PSA 2.5–4.0', 'PSA 4.0–10.0', 'PSA >10.0'],
       datasets: [
         {
           label: 'Any Cancer on Biopsy (%)',
-          data: [8, 17, 25, 32, 58],
-          backgroundColor: 'rgba(46,134,193,0.75)',
-          borderColor: 'rgba(46,134,193,1)',
+          data: [10, 25, 32, 58],
+          backgroundColor: 'rgba(26,82,118,0.75)',
+          borderColor: 'rgba(26,82,118,1)',
           borderWidth: 1.5,
-          borderRadius: 6
+          borderRadius: 4
         },
         {
           label: 'Clinically Significant Cancer (Grade ≥2) (%)',
-          data: [1.5, 5, 10, 17, 35],
+          data: [2, 10, 17, 35],
           backgroundColor: 'rgba(192,57,43,0.7)',
           borderColor: 'rgba(192,57,43,1)',
           borderWidth: 1.5,
-          borderRadius: 6
+          borderRadius: 4
         }
       ]
     },
@@ -461,7 +523,13 @@
       maintainAspectRatio: false,
       plugins: {
         legend: { position: 'top', labels: { font: { size: 12 }, padding: 16 } },
-        title: { display: true, text: 'Cancer Probability at Different PSA Levels (based on biopsy studies)', font: { size: 13, weight: '600' }, color: '#1a3a5c', padding: { bottom: 12 } },
+        title: {
+          display: true,
+          text: 'Cancer Probability at Different PSA Levels (biopsy studies)',
+          font: { size: 13, weight: '600' },
+          color: '#111',
+          padding: { bottom: 12 }
+        },
         tooltip: {
           callbacks: {
             label: function(ctx) { return ctx.dataset.label + ': ~' + ctx.parsed.y + '%'; }
@@ -472,9 +540,9 @@
         y: {
           beginAtZero: true,
           max: 70,
-          title: { display: true, text: 'Probability (%)', font: { size: 11 }, color: '#4a5568' },
+          title: { display: true, text: 'Probability (%)', font: { size: 11 }, color: '#444' },
           ticks: { callback: function(v) { return v + '%'; } },
-          grid: { color: 'rgba(0,0,0,0.06)' }
+          grid: { color: 'rgba(0,0,0,0.05)' }
         },
         x: { grid: { display: false } }
       }
@@ -482,32 +550,57 @@
   });
 })();
 
-// ---- Interactive Risk Comparison Chart ----
+/* ============================================================
+   Interactive Risk Comparison Chart
+   ============================================================ */
 var riskChart;
+
+// Evidence-based data per PSA range.
+// Biopsy and surgery risks are CONSTANT across PSA levels — they are procedure risks, not PSA-dependent.
 var riskData = {
   low: {
     title: 'PSA 0–2.5 ng/mL: Generally Reassuring',
-    cancerProb: 8, sigCancerProb: 1.5, mortalityRisk: 0.5,
-    biopsySepsis: 1.5, biopsyBleeding: 12, treatmentIncontinence: 15, treatmentED: 25,
-    summary: 'At this PSA level, the probability of finding any cancer on biopsy is approximately 8%, and clinically significant cancer is only about 1.5%. For most men in this range, the standard recommendation is continued routine monitoring rather than further workup. The risks of biopsy (infection, bleeding) and treatment (incontinence, erectile dysfunction) likely outweigh the benefits of intervention at this PSA level in the absence of other high-risk features.'
+    cancerProb: 10,          // PCPT data: ~10% for PSA 0-2.5
+    sigCancerProb: 2,        // ~2% clinically significant
+    mortalityRisk: 1,        // ~1% 10-yr PCa-specific mortality without workup (mostly low-grade at this PSA)
+    biopsySepsis: 2,         // ~2% serious infection (constant)
+    biopsyBleeding: 12,      // ~12% notable bleeding (constant)
+    surgeryIncontinence: 18, // ~18% incontinence at 1yr post-RARP (Ficarra 2012)
+    surgeryED: 55,           // ~55% ED at 1yr nerve-sparing RARP
+    summary: 'At this PSA level, approximately 1 in 10 men who undergo biopsy will have any cancer, and only about 2% will have clinically significant (Grade Group ≥2) disease. The 10-year prostate cancer mortality risk without workup is very low at this PSA range. For most men, continued routine monitoring is recommended rather than further workup. If a biopsy were performed, the procedure-related risks (infection ~2%, bleeding ~12%) would likely outweigh the benefit of detecting a low-risk cancer at this stage.'
   },
   borderline: {
     title: 'PSA 2.5–4.0 ng/mL: Borderline Elevated',
-    cancerProb: 25, sigCancerProb: 10, mortalityRisk: 3,
-    biopsySepsis: 1.5, biopsyBleeding: 15, treatmentIncontinence: 20, treatmentED: 35,
-    summary: 'In the 2.5–4.0 ng/mL range, approximately 1 in 4 men who undergo biopsy will have cancer — but only about 10% will have clinically significant (Grade Group ≥2) disease. Secondary biomarkers (PHI, 4Kscore) can help identify which men truly need a biopsy. The risk of cancer death in this range (without further workup) is low but not negligible, particularly for younger men and those with high-risk features.'
+    cancerProb: 25,
+    sigCancerProb: 10,
+    mortalityRisk: 3,
+    biopsySepsis: 2,
+    biopsyBleeding: 12,
+    surgeryIncontinence: 18,
+    surgeryED: 55,
+    summary: 'In the 2.5–4.0 ng/mL range, approximately 1 in 4 men who undergo biopsy will have cancer — but only about 10% will have clinically significant (Grade Group ≥2) disease. Secondary biomarkers (PHI, 4Kscore) can help identify which men truly need a biopsy. Biopsy and surgical side effect risks remain the same regardless of PSA level — note these bars do not change between PSA ranges.'
   },
   grey: {
     title: 'PSA 4.0–10.0 ng/mL: The "Grey Zone"',
-    cancerProb: 32, sigCancerProb: 17, mortalityRisk: 8,
-    biopsySepsis: 2, biopsyBleeding: 15, treatmentIncontinence: 20, treatmentED: 40,
-    summary: 'The 4–10 ng/mL range is often called the "diagnostic grey zone." About 1 in 3 men will have cancer on biopsy, and approximately 17% will have clinically significant disease. This is where secondary biomarkers (PHI, 4Kscore, %fPSA) and prostate MRI provide the most value — helping to avoid unnecessary biopsies while ensuring men with significant cancer receive timely evaluation. Without further workup, an untreated clinically significant cancer in this range carries meaningful mortality risk over time.'
+    cancerProb: 32,
+    sigCancerProb: 17,
+    mortalityRisk: 7,
+    biopsySepsis: 2,
+    biopsyBleeding: 12,
+    surgeryIncontinence: 18,
+    surgeryED: 55,
+    summary: 'The 4–10 ng/mL range is often called the "diagnostic grey zone." About 1 in 3 men will have cancer on biopsy, and approximately 17% will have clinically significant disease. This is where secondary biomarkers (PHI, 4Kscore, %fPSA) and prostate MRI provide the most value — helping to avoid unnecessary biopsies while ensuring men with significant cancer receive timely evaluation. Without further workup, an untreated clinically significant cancer in this range carries a meaningful 10-year mortality risk (~7%).'
   },
   high: {
     title: 'PSA >10.0 ng/mL: Significantly Elevated',
-    cancerProb: 58, sigCancerProb: 35, mortalityRisk: 25,
-    biopsySepsis: 2.5, biopsyBleeding: 18, treatmentIncontinence: 25, treatmentED: 45,
-    summary: 'Above 10 ng/mL, the majority of biopsies will detect cancer, and a significant proportion will be clinically significant (Grade Group ≥2). The long-term cancer mortality risk without intervention is substantial. Prompt urological referral and prostate MRI are strongly indicated. While treatment side effects are real, the benefit of treatment generally outweighs the risks at this PSA level in men with reasonable life expectancy.'
+    cancerProb: 58,
+    sigCancerProb: 35,
+    mortalityRisk: 20,
+    biopsySepsis: 2,
+    biopsyBleeding: 12,
+    surgeryIncontinence: 18,
+    surgeryED: 55,
+    summary: 'Above 10 ng/mL, the majority of biopsies will detect cancer, and a significant proportion (~35%) will be clinically significant (Grade Group ≥2). The estimated 10-year prostate cancer mortality risk without intervention is substantial (~20%). Prompt urological referral and prostate MRI are strongly indicated. While surgery and radiation carry real side effects (incontinence, erectile dysfunction — shown here as constant bars), the benefit of treatment generally outweighs the risks at this PSA level in men with reasonable life expectancy.'
   }
 };
 
@@ -515,16 +608,33 @@ function updateInteractiveChart() {
   var key = document.getElementById('psa-range-select').value;
   var d = riskData[key];
 
-  // Update summary
   document.getElementById('summary-title').textContent = d.title;
-  document.getElementById('summary-body').innerHTML = '<p>' + d.summary + '</p>';
+  document.getElementById('summary-body').innerHTML = '<p style="font-size:0.875rem;">' + d.summary + '</p>';
 
-  var labels = ['Any Cancer\non Biopsy', 'Clinically Significant\nCancer', '10-Year Cancer\nMortality (untreated)', 'Biopsy: Serious\nInfection Risk', 'Biopsy: Bleeding\nRisk', 'Treatment:\nIncontinence Risk', 'Treatment:\nErectile Dysfunction'];
-  var vals = [d.cancerProb, d.sigCancerProb, d.mortalityRisk, d.biopsySepsis, d.biopsyBleeding, d.treatmentIncontinence, d.treatmentED];
+  var labels = [
+    ['Any Cancer', 'on Biopsy'],
+    ['Significant Cancer', '(Grade ≥2)'],
+    ['Est. 10-yr PCa', 'Mortality (no tx)'],
+    ['Biopsy:', 'Sepsis Risk *'],
+    ['Biopsy:', 'Bleeding Risk *'],
+    ['Post-Surgery:', 'Incontinence 1yr *'],
+    ['Post-Surgery:', 'Erectile Dysfxn 1yr *']
+  ];
+
+  var vals = [
+    d.cancerProb, d.sigCancerProb, d.mortalityRisk,
+    d.biopsySepsis, d.biopsyBleeding,
+    d.surgeryIncontinence, d.surgeryED
+  ];
+
   var colors = [
-    'rgba(46,134,193,0.8)', 'rgba(192,57,43,0.8)', 'rgba(192,57,43,0.6)',
-    'rgba(231,76,60,0.7)', 'rgba(243,156,18,0.7)',
-    'rgba(142,68,173,0.7)', 'rgba(142,68,173,0.5)'
+    'rgba(26,82,118,0.85)',
+    'rgba(192,57,43,0.85)',
+    'rgba(192,57,43,0.55)',
+    'rgba(231,76,60,0.75)',
+    'rgba(211,84,0,0.7)',
+    'rgba(118,68,138,0.7)',
+    'rgba(118,68,138,0.45)'
   ];
 
   if (riskChart) {
@@ -543,7 +653,7 @@ function updateInteractiveChart() {
         label: 'Approximate Risk (%)',
         data: vals,
         backgroundColor: colors,
-        borderRadius: 6,
+        borderRadius: 4,
         borderWidth: 0
       }]
     },
@@ -552,7 +662,13 @@ function updateInteractiveChart() {
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        title: { display: true, text: 'Comparative Risk Estimates (%)', font: { size: 13, weight: '600' }, color: '#1a3a5c', padding: { bottom: 12 } },
+        title: {
+          display: true,
+          text: 'Comparative Risk Estimates (%) — * marks risks constant across PSA levels',
+          font: { size: 12, weight: '600' },
+          color: '#111',
+          padding: { bottom: 10 }
+        },
         tooltip: {
           callbacks: {
             label: function(ctx) { return 'Approx. ' + ctx.parsed.y + '%'; }
@@ -563,32 +679,55 @@ function updateInteractiveChart() {
         y: {
           beginAtZero: true,
           max: 70,
-          title: { display: true, text: 'Approximate Risk (%)', font: { size: 11 }, color: '#4a5568' },
+          title: { display: true, text: 'Approximate Risk (%)', font: { size: 11 }, color: '#444' },
           ticks: { callback: function(v) { return v + '%'; } },
-          grid: { color: 'rgba(0,0,0,0.06)' }
+          grid: { color: 'rgba(0,0,0,0.05)' }
         },
-        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 0 } }
+        x: {
+          grid: { display: false },
+          ticks: {
+            font: { size: 10 },
+            maxRotation: 0,
+            autoSkip: false
+          }
+        }
       }
     }
   });
 }
 
-// ---- Pictographs ----
-function buildPictograph(containerId, total, highlighted, color) {
-  var container = document.getElementById(containerId);
-  if (!container) return;
-  var html = '';
-  for (var i = 0; i < total; i++) {
-    var isHighlighted = i < highlighted;
-    html += '<span class="pictograph-person" style="color:' + (isHighlighted ? color : '#c8d6e5') + ';" aria-hidden="true" title="' + (isHighlighted ? 'Affected' : 'Not affected') + '">👤</span>';
-  }
-  container.innerHTML = html;
-}
-
-// Initialize all visualizations on load
+/* ============================================================
+   Build all visualizations on page load
+   ============================================================ */
 document.addEventListener('DOMContentLoaded', function() {
-  buildPictograph('pictograph-all', 100, 12, '#2e86c1');
-  buildPictograph('pictograph-black', 100, 17, '#c0392b');
+
+  // Pictograph: All men — 2 red (die), 11 blue (diagnosed, survive), 87 gray
+  buildPicto('picto-all', 100, [
+    { n: 2,  color: '#c0392b' },  // die from prostate cancer
+    { n: 11, color: '#1a5276' }   // diagnosed but survive
+  ]);
+
+  // Pictograph: Black men — 5 red (die), 12 blue (diagnosed, survive), 83 gray
+  buildPicto('picto-black', 100, [
+    { n: 5,  color: '#c0392b' },
+    { n: 12, color: '#1a5276' }
+  ]);
+
+  // Biopsy: Sepsis — 2 red, 98 gray
+  buildPicto('picto-sepsis', 100, [
+    { n: 2, color: '#c0392b' }
+  ]);
+
+  // Biopsy: Bleeding — 12 amber, 88 gray
+  buildPicto('picto-bleed', 100, [
+    { n: 12, color: '#b7780b' }
+  ]);
+
+  // Biopsy: Pain/discomfort — 22 orange, 78 gray
+  buildPicto('picto-pain', 100, [
+    { n: 22, color: '#b85b00' }
+  ]);
+
   updateInteractiveChart();
 });
 </script>

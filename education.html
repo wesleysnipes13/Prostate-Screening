@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Further Education — Prostate Screening Pathway</title>
-  <meta name="description" content="Learn about the prostate gland, what prostate cancer is, how it develops, its symptoms, and what treatment involves." />
+  <meta name="description" content="Learn about the prostate gland, what prostate cancer is, how it develops, its symptoms, and what diagnosis and treatment involve." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
@@ -14,15 +14,15 @@
 <!-- =================== NAVIGATION =================== -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
+    <div class="nav-logo" aria-label="Prostate Screening Pathway">
       <div class="nav-logo-icon" aria-hidden="true">🩺</div>
       <div class="nav-logo-text">Prostate Screening Pathway<span class="nav-logo-sub">Patient Information Resource</span></div>
-    </a>
+    </div>
     <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="screening.html">Who Should Be Screened</a></li>
       <li><a href="results.html">Understand Your PSA</a></li>
-      <li><a href="education.html">Further Education</a></li>
+      <li><a href="education.html" class="active">Further Education</a></li>
       <li><a href="data.html">What the Data Says</a></li>
     </ul>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -32,16 +32,16 @@
 </nav>
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
   <ul role="list">
-    <li><a href="index.html">🏠 Home</a></li>
-    <li><a href="screening.html">🔍 Who Should Be Screened</a></li>
-    <li><a href="results.html">📊 Understand Your PSA</a></li>
-    <li><a href="education.html">📖 Further Education</a></li>
-    <li><a href="data.html">📈 What the Data Says</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="screening.html">Who Should Be Screened</a></li>
+    <li><a href="results.html">Understand Your PSA</a></li>
+    <li><a href="education.html">Further Education</a></li>
+    <li><a href="data.html">What the Data Says</a></li>
   </ul>
 </div>
 
 <!-- =================== PAGE HEADER =================== -->
-<header class="hero" style="padding:2.5rem 1rem 3rem;">
+<header class="hero" style="padding:2.5rem 1.25rem 3rem;">
   <div class="hero-badge">Educational Resource</div>
   <h1>Further Education</h1>
   <p>Understanding the prostate, how cancer develops, what symptoms to watch for, and what diagnosis and treatment involve — in plain language.</p>
@@ -52,15 +52,14 @@
   <!-- Quick Nav -->
   <nav aria-label="Page sections" style="margin-bottom:2rem;">
     <div class="card" style="padding:1rem 1.25rem;">
-      <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-light);margin-bottom:0.5rem;">Jump to a section:</p>
+      <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-light);margin-bottom:0.5rem;">Jump to a section:</p>
       <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-        <a href="#prostate" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">The Prostate</a>
-        <a href="#cancer" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">What Is Prostate Cancer</a>
-        <a href="#symptoms" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">Symptoms</a>
-        <a href="#screening" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">Screening &amp; Diagnosis</a>
-        <a href="#grading" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">Grading</a>
-        <a href="#treatment" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">Treatment</a>
-        <a href="#dre" class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.825rem;">The DRE</a>
+        <a href="#prostate" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">The Prostate</a>
+        <a href="#cancer" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">What Is Prostate Cancer</a>
+        <a href="#symptoms" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">Symptoms</a>
+        <a href="#screening" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">Screening &amp; Diagnosis</a>
+        <a href="#grading" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">Grading</a>
+        <a href="#treatment" class="btn btn-outline" style="padding:0.35rem 0.85rem;font-size:0.8rem;">Treatment</a>
       </div>
     </div>
   </nav>
@@ -72,38 +71,69 @@
       <h2>What Is the Prostate?</h2>
     </div>
     <div class="card">
-      <p>The prostate is a small gland — roughly the size of a walnut — located just below the bladder and in front of the rectum in men. It surrounds the urethra (the tube that carries urine and semen out of the body).</p>
-      <p>The prostate's primary function is to produce seminal fluid, the liquid component of semen that nourishes and helps transport sperm. It plays an important role in male fertility and sexual function, but is not essential for urination (though its location means prostate disease often affects urinary flow).</p>
+      <p>The prostate is a small gland — roughly the size of a walnut — located just below the bladder and in front of the rectum in men. It surrounds the urethra (the tube that carries urine and semen out of the body). The prostate's primary function is to produce seminal fluid, the liquid component of semen that nourishes and helps transport sperm.</p>
 
-      <!-- SVG Diagram of Prostate Location -->
-      <div style="background:#f0f7ff;border-radius:var(--radius-sm);padding:1.5rem;text-align:center;margin:1.25rem 0;">
-        <svg viewBox="0 0 320 240" style="max-width:320px;width:100%;" aria-label="Diagram showing prostate location relative to bladder and rectum" role="img">
-          <!-- Bladder -->
-          <ellipse cx="160" cy="65" rx="55" ry="45" fill="#d6eaf8" stroke="#2e86c1" stroke-width="2"/>
-          <text x="160" y="60" text-anchor="middle" font-size="11" font-weight="600" fill="#1a3a5c">Bladder</text>
-          <text x="160" y="74" text-anchor="middle" font-size="9" fill="#5d6d7e">(stores urine)</text>
-          <!-- Urethra -->
-          <rect x="153" y="108" width="14" height="55" rx="7" fill="#aed6f1" stroke="#2e86c1" stroke-width="1.5"/>
-          <text x="215" y="137" font-size="9" fill="#5d6d7e">Urethra</text>
-          <line x1="197" y1="135" x2="167" y2="135" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
-          <!-- Prostate -->
-          <ellipse cx="160" cy="125" rx="28" ry="18" fill="#f0c040" stroke="#b7950b" stroke-width="2.5"/>
-          <text x="160" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#7d6608">Prostate</text>
-          <text x="160" y="132" text-anchor="middle" font-size="9" fill="#7d6608">~walnut sized</text>
-          <!-- Rectum -->
-          <rect x="95" y="155" width="130" height="45" rx="10" fill="#fce4ec" stroke="#c0392b" stroke-width="1.5"/>
-          <text x="160" y="174" text-anchor="middle" font-size="11" font-weight="600" fill="#922b21">Rectum</text>
-          <text x="160" y="188" text-anchor="middle" font-size="9" fill="#c0392b">(DRE palpates prostate here)</text>
-          <!-- Arrow from bladder to prostate -->
-          <line x1="160" y1="110" x2="160" y2="108" stroke="#2e86c1" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <!-- Detailed Anatomical SVG Diagram -->
+      <div style="background:#f8f9fa;border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.5rem;text-align:center;margin:1.25rem 0;">
+        <svg viewBox="0 0 380 290" style="max-width:380px;width:100%;" aria-label="Detailed anatomical diagram showing prostate location relative to bladder, urethra, seminal vesicles, and rectum" role="img">
+
+          <!-- Pelvic bone outline (simplified) -->
+          <path d="M 20 230 Q 40 200 80 195 L 300 195 Q 340 200 360 230" stroke="#ccc" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+
+          <!-- Seminal Vesicles (behind prostate) -->
+          <ellipse cx="135" cy="130" rx="20" ry="12" fill="#d5e8d4" stroke="#5a8a5a" stroke-width="1.5" transform="rotate(-20 135 130)"/>
+          <ellipse cx="185" cy="130" rx="20" ry="12" fill="#d5e8d4" stroke="#5a8a5a" stroke-width="1.5" transform="rotate(20 185 130)"/>
+          <text x="160" y="119" text-anchor="middle" font-size="8.5" fill="#3d6b3d" font-weight="600">Seminal Vesicles</text>
+
+          <!-- Bladder (larger, more realistic oval shape) -->
+          <ellipse cx="160" cy="72" rx="62" ry="52" fill="#ddeeff" stroke="#3a6aad" stroke-width="2"/>
+          <!-- Bladder rugae (internal texture suggestion) -->
+          <ellipse cx="160" cy="72" rx="48" ry="38" fill="none" stroke="#a8c4e8" stroke-width="0.8" opacity="0.6"/>
+          <text x="160" y="67" text-anchor="middle" font-size="12" font-weight="700" fill="#1a3a6e">Bladder</text>
+          <text x="160" y="81" text-anchor="middle" font-size="9" fill="#3a6aad">(stores urine)</text>
+
+          <!-- Bladder neck -->
+          <rect x="148" y="122" width="24" height="10" rx="3" fill="#c8dcf4" stroke="#3a6aad" stroke-width="1.5"/>
+
+          <!-- Urethra (vertical tube through prostate) -->
+          <rect x="153" y="132" width="14" height="90" rx="6" fill="#aed6f1" stroke="#2e78b5" stroke-width="1.5"/>
+          <text x="330" y="175" font-size="9" fill="#2e78b5" font-weight="600">Urethra</text>
+          <line x1="255" y1="173" x2="167" y2="173" stroke="#2e78b5" stroke-width="1" stroke-dasharray="3,2"/>
+
+          <!-- Prostate gland (more detailed shape) -->
+          <path d="M 127 148 Q 118 148 116 158 Q 114 168 115 176 Q 116 185 127 188 Q 160 192 193 188 Q 204 185 205 176 Q 206 168 204 158 Q 202 148 193 148 Q 160 144 127 148 Z" fill="#f9e8a0" stroke="#b89820" stroke-width="2.5"/>
+          <!-- Prostate zones (peripheral zone) -->
+          <path d="M 133 152 Q 160 149 187 152 Q 196 162 196 170 Q 196 178 187 183 Q 160 186 133 183 Q 124 178 124 170 Q 124 162 133 152 Z" fill="none" stroke="#e8c730" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+          <text x="160" y="165" text-anchor="middle" font-size="11" font-weight="700" fill="#7a6000">Prostate</text>
+          <text x="160" y="178" text-anchor="middle" font-size="8.5" fill="#7a6000">walnut-sized gland</text>
+
+          <!-- Vas deferens (small tubes) -->
+          <path d="M 148 132 Q 135 128 125 130" stroke="#888" stroke-width="1.5" fill="none"/>
+          <path d="M 172 132 Q 185 128 195 130" stroke="#888" stroke-width="1.5" fill="none"/>
+
+          <!-- Rectum (realistic shape) -->
+          <path d="M 90 212 Q 88 230 90 248 Q 92 262 110 265 Q 140 268 160 268 Q 180 268 210 265 Q 228 262 230 248 Q 232 230 230 212 Q 210 205 160 204 Q 110 205 90 212 Z" fill="#fce4ec" stroke="#c0392b" stroke-width="1.5"/>
+          <text x="160" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#922b21">Rectum</text>
+          <text x="160" y="248" text-anchor="middle" font-size="8.5" fill="#c0392b">(posterior to prostate)</text>
+
+          <!-- External urethral sphincter -->
+          <ellipse cx="160" cy="222" rx="14" ry="6" fill="#e8d5f5" stroke="#8a3aad" stroke-width="1.5"/>
+          <text x="234" y="225" font-size="8" fill="#8a3aad">External Sphincter</text>
+          <line x1="233" y1="222" x2="174" y2="222" stroke="#8a3aad" stroke-width="1" stroke-dasharray="2,2"/>
+
+          <!-- Arrow indicators -->
+          <line x1="160" y1="124" x2="160" y2="133" stroke="#3a6aad" stroke-width="1.5" stroke-dasharray="2,2"/>
+
+          <!-- Pubic bone label -->
+          <text x="192" y="200" font-size="8" fill="#999">(anterior: pubic symphysis)</text>
         </svg>
-        <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.5rem;margin-bottom:0;">Anatomical position of the prostate relative to the bladder, urethra, and rectum</p>
+        <p style="font-size:0.78rem;color:var(--text-light);margin-top:0.5rem;margin-bottom:0;">Anatomical cross-section: prostate location relative to the bladder, urethra, seminal vesicles, and rectum. The prostate surrounds the urethra just below the bladder neck.</p>
       </div>
 
-      <p>As men age, the prostate naturally grows larger — a non-cancerous condition called <strong>Benign Prostatic Hyperplasia (BPH)</strong>. BPH affects more than half of men over age 60 and is one of the most common reasons for an elevated PSA level.</p>
+      <p>As men age, the prostate naturally grows larger — a non-cancerous condition called <strong>Benign Prostatic Hyperplasia (BPH)</strong> that affects more than half of men over age 60 and is one of the most common causes of elevated PSA.</p>
 
       <div class="alert alert-info">
-        <div class="alert-title">💡 Key Takeaway</div>
+        <div class="alert-title">Key Takeaway</div>
         <p>Because the prostate surrounds the urethra, any condition that enlarges or inflames it can affect urinary flow. Not all prostate problems are cancer — in fact, most prostate-related symptoms in men over 50 are due to benign conditions.</p>
       </div>
     </div>
@@ -131,23 +161,23 @@
       </div>
 
       <h3 style="margin-top:1.5rem;margin-bottom:0.75rem;">How Does Prostate Cancer Develop?</h3>
-      <p>Prostate cancer most often begins in the outer (peripheral) zone of the gland and typically starts as a microscopic focus of abnormal cells. Over time, without intervention, it can grow and potentially break through the prostate capsule (the outer wall of the gland), spread to nearby lymph nodes, and eventually metastasize to distant organs — most commonly bone.</p>
+      <p>Prostate cancer most often begins in the outer (peripheral) zone of the gland and typically starts as a microscopic focus of abnormal cells. Over time, without intervention, it can grow and potentially break through the prostate capsule, spread to nearby lymph nodes, and eventually metastasize to distant organs — most commonly bone.</p>
 
       <h3 style="margin-top:1.25rem;margin-bottom:0.75rem;">Who Gets Prostate Cancer?</h3>
       <p>All men are at risk of developing prostate cancer with age. However, certain groups carry substantially higher risk:</p>
       <div class="grid-3 mt-2" style="gap:0.75rem;">
-        <div class="card" style="padding:1rem;text-align:center;border-top:3px solid var(--secondary);">
-          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.25rem;">Lifetime Risk</div>
-          <div style="font-size:1.6rem;font-weight:800;color:var(--secondary);">1 in 8</div>
+        <div class="card" style="padding:1rem;text-align:center;border-top:3px solid #1a5276;">
+          <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.25rem;">Lifetime Risk</div>
+          <div style="font-size:1.6rem;font-weight:800;color:#1a5276;">1 in 8</div>
           <div style="font-size:0.825rem;color:var(--text-mid);">All American men</div>
         </div>
         <div class="card" style="padding:1rem;text-align:center;border-top:3px solid var(--red);">
-          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.25rem;">Lifetime Risk</div>
+          <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.25rem;">Lifetime Risk</div>
           <div style="font-size:1.6rem;font-weight:800;color:var(--red);">1 in 6</div>
           <div style="font-size:0.825rem;color:var(--text-mid);">Black men (highest risk group)</div>
         </div>
         <div class="card" style="padding:1rem;text-align:center;border-top:3px solid var(--yellow);">
-          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.25rem;">Average Age</div>
+          <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;color:var(--text-light);margin-bottom:0.25rem;">Average Age</div>
           <div style="font-size:1.6rem;font-weight:800;color:var(--yellow);">66</div>
           <div style="font-size:0.825rem;color:var(--text-mid);">Median age at diagnosis</div>
         </div>
@@ -162,44 +192,34 @@
       <h2>Symptoms of Prostate Cancer</h2>
     </div>
     <div class="card">
-      <div class="alert alert-warning" style="margin-bottom:1.25rem;">
-        <div class="alert-title">⚠️ A Critical Point About Symptoms</div>
-        <p>Early-stage prostate cancer typically causes <strong>no symptoms at all</strong>. This is exactly why PSA screening exists — to detect cancer before it becomes symptomatic. By the time symptoms appear, the disease may be more advanced.</p>
-      </div>
-
-      <p>When symptoms do occur, they often overlap significantly with symptoms of Benign Prostatic Hyperplasia (BPH), making it impossible to distinguish cancer from a benign enlargement based on symptoms alone.</p>
+      <p>Early-stage prostate cancer typically causes <strong>no symptoms at all</strong> — this is exactly why PSA screening exists. When symptoms do occur, they often overlap significantly with symptoms of Benign Prostatic Hyperplasia (BPH), making it impossible to distinguish cancer from benign enlargement based on symptoms alone.</p>
 
       <div class="grid-2 mt-2" style="gap:1rem;">
         <div>
-          <h4 style="margin-bottom:0.75rem;color:var(--primary);">Urinary Symptoms</h4>
-          <ul style="padding-left:1.25rem;">
-            <li style="margin-bottom:0.4rem;">Frequent urination, especially at night (nocturia)</li>
-            <li style="margin-bottom:0.4rem;">Difficulty starting urination (hesitancy)</li>
-            <li style="margin-bottom:0.4rem;">Weak or interrupted urine stream</li>
-            <li style="margin-bottom:0.4rem;">Feeling that the bladder doesn't fully empty</li>
-            <li style="margin-bottom:0.4rem;">Pain or burning during urination (more common with prostatitis)</li>
-            <li>Blood in the urine (hematuria) — always warrants evaluation</li>
+          <h4 style="margin-bottom:0.5rem;color:var(--text);">Urinary Symptoms</h4>
+          <ul style="padding-left:1.25rem;font-size:0.875rem;color:var(--text-mid);">
+            <li>Frequent urination, especially at night</li>
+            <li>Difficulty starting urination</li>
+            <li>Weak or interrupted urine stream</li>
+            <li>Feeling that the bladder doesn't fully empty</li>
+            <li>Pain or burning during urination</li>
+            <li>Blood in the urine — always warrants evaluation</li>
           </ul>
         </div>
         <div>
-          <h4 style="margin-bottom:0.75rem;color:var(--primary);">Sexual &amp; Other Symptoms</h4>
-          <ul style="padding-left:1.25rem;">
-            <li style="margin-bottom:0.4rem;">Blood in semen (hematospermia)</li>
-            <li style="margin-bottom:0.4rem;">Painful ejaculation</li>
-            <li style="margin-bottom:0.4rem;">Erectile dysfunction (can have many causes)</li>
+          <h4 style="margin-bottom:0.5rem;color:var(--text);">Sexual &amp; Other Symptoms</h4>
+          <ul style="padding-left:1.25rem;font-size:0.875rem;color:var(--text-mid);">
+            <li>Blood in semen (hematospermia)</li>
+            <li>Painful ejaculation</li>
+            <li>Erectile dysfunction (can have many causes)</li>
           </ul>
-          <h4 style="margin:0.75rem 0;color:var(--red);">Symptoms of Advanced Disease</h4>
-          <ul style="padding-left:1.25rem;">
-            <li style="margin-bottom:0.4rem;">Bone pain (especially in the lower back, hips, or pelvis) — can indicate metastases</li>
-            <li style="margin-bottom:0.4rem;">Unexplained weight loss and fatigue</li>
-            <li>Leg weakness or swelling (due to lymph node involvement)</li>
+          <h4 style="margin:0.75rem 0 0.5rem;color:var(--red);">Symptoms of Advanced Disease</h4>
+          <ul style="padding-left:1.25rem;font-size:0.875rem;color:var(--text-mid);">
+            <li>Bone pain (especially in the lower back, hips, or pelvis)</li>
+            <li>Unexplained weight loss and fatigue</li>
+            <li>Leg weakness or swelling</li>
           </ul>
         </div>
-      </div>
-
-      <div class="alert alert-danger mt-3">
-        <div class="alert-title">🔴 When to See a Doctor Promptly</div>
-        <p>Blood in the urine or semen, or new bone pain (especially in the back or hips) in a man over 50, should prompt a prompt medical evaluation. These symptoms are not always cancer — but they always warrant investigation.</p>
       </div>
     </div>
   </section>
@@ -211,50 +231,33 @@
       <h2>Screening &amp; Diagnosis</h2>
     </div>
     <div class="card">
-      <p>Prostate cancer screening involves testing men who have no symptoms. The two primary screening tools are:</p>
+      <p>Prostate cancer screening involves testing men who have no symptoms. The primary screening tool is the <strong>PSA (Prostate-Specific Antigen) blood test</strong> — a simple blood test measuring PSA protein levels. An elevated PSA triggers further evaluation but does not confirm cancer.</p>
 
-      <div class="grid-2 mt-2" style="gap:1rem;">
-        <div class="card" style="border-top:3px solid var(--secondary);">
-          <h4 style="margin-bottom:0.5rem;">🩸 PSA Blood Test</h4>
-          <p>A simple blood test measuring the level of Prostate-Specific Antigen (PSA) protein. PSA is produced by prostate cells — both normal and cancerous. An elevated PSA triggers further evaluation but does not confirm cancer.</p>
-          <ul style="padding-left:1.25rem;font-size:0.875rem;">
-            <li style="margin-bottom:0.3rem;">Quick and minimally invasive</li>
-            <li style="margin-bottom:0.3rem;">Can detect cancer before symptoms develop</li>
-            <li>Can be elevated by many non-cancerous conditions (BPH, prostatitis, recent activity)</li>
-          </ul>
-        </div>
-        <div class="card" style="border-top:3px solid var(--primary);">
-          <h4 style="margin-bottom:0.5rem;">🖐️ Digital Rectal Exam (DRE)</h4>
-          <p>A physical examination where the physician feels the back surface of the prostate through the rectal wall. Takes about 10–15 seconds.</p>
-          <ul style="padding-left:1.25rem;font-size:0.875rem;">
-            <li style="margin-bottom:0.3rem;">Can detect a hard nodule or irregular texture even if PSA is normal</li>
-            <li style="margin-bottom:0.3rem;">An abnormal DRE alone is an indication for further evaluation</li>
-            <li>Recommended when PSA ≥2.0 ng/mL per current guidelines</li>
-          </ul>
-        </div>
+      <div class="alert alert-info" style="margin:1rem 0;">
+        <p>The Digital Rectal Exam (DRE) is no longer recommended as a routine, first-line screening tool for prostate cancer.</p>
       </div>
 
-      <h3 style="margin-top:1.5rem;margin-bottom:0.75rem;">The Diagnostic Pathway</h3>
+      <h3 style="margin-top:1.25rem;margin-bottom:0.75rem;">The Diagnostic Pathway</h3>
       <p>Screening detects a signal. Diagnosis requires additional steps:</p>
 
       <!-- Flow diagram -->
       <div style="display:flex;flex-direction:column;gap:0.5rem;margin:1rem 0;">
-        <div style="background:#e8f4fc;border:1.5px solid #b3d4f0;border-radius:var(--radius-sm);padding:0.75rem 1rem;text-align:center;">
-          <strong>Step 1: PSA Screening + Optional DRE</strong><br/>
-          <span style="font-size:0.825rem;color:var(--text-mid);">Elevated PSA → Confirm with repeat test (wait a few weeks)</span>
+        <div style="background:#f0f6ff;border:1px solid #b3d4f0;border-radius:var(--radius-sm);padding:0.75rem 1rem;text-align:center;">
+          <strong>Step 1: PSA Screening</strong><br/>
+          <span style="font-size:0.825rem;color:var(--text-mid);">Elevated PSA → Confirm with repeat test (wait a few weeks to exclude transient causes)</span>
         </div>
-        <div style="text-align:center;font-size:1.25rem;color:var(--secondary);">↓</div>
-        <div style="background:#e8f4fc;border:1.5px solid #b3d4f0;border-radius:var(--radius-sm);padding:0.75rem 1rem;text-align:center;">
+        <div style="text-align:center;font-size:1.25rem;color:var(--text-mid);">↓</div>
+        <div style="background:#f0f6ff;border:1px solid #b3d4f0;border-radius:var(--radius-sm);padding:0.75rem 1rem;text-align:center;">
           <strong>Step 2: Confound Exclusion + Secondary Biomarkers</strong><br/>
           <span style="font-size:0.825rem;color:var(--text-mid);">PSA Density, %fPSA, PHI, 4Kscore — helps distinguish BPH from cancer</span>
         </div>
-        <div style="text-align:center;font-size:1.25rem;color:var(--secondary);">↓</div>
-        <div style="background:#e8f4fc;border:1.5px solid #b3d4f0;border-radius:var(--radius-sm);padding:0.75rem 1rem;text-align:center;">
+        <div style="text-align:center;font-size:1.25rem;color:var(--text-mid);">↓</div>
+        <div style="background:#f0f6ff;border:1px solid #b3d4f0;border-radius:var(--radius-sm);padding:0.75rem 1rem;text-align:center;">
           <strong>Step 3: Multiparametric MRI (mpMRI)</strong><br/>
           <span style="font-size:0.825rem;color:var(--text-mid);">Imaging of the prostate — reported using PI-RADS scoring (1–5)</span>
         </div>
-        <div style="text-align:center;font-size:1.25rem;color:var(--secondary);">↓</div>
-        <div style="background:#fef9e7;border:1.5px solid #f0c040;border-radius:var(--radius-sm);padding:0.75rem 1rem;text-align:center;">
+        <div style="text-align:center;font-size:1.25rem;color:var(--text-mid);">↓</div>
+        <div style="background:#fef9e7;border:1px solid #f0c040;border-radius:var(--radius-sm);padding:0.75rem 1rem;text-align:center;">
           <strong>Step 4: Prostate Biopsy (if indicated)</strong><br/>
           <span style="font-size:0.825rem;color:var(--text-mid);">Tissue samples taken for laboratory analysis — the only way to definitively diagnose prostate cancer</span>
         </div>
@@ -319,11 +322,6 @@
           </tbody>
         </table>
       </div>
-
-      <div class="alert alert-success mt-3">
-        <div class="alert-title">✅ Why Grade Group Matters for Screening</div>
-        <p>PSA screening is most valuable for detecting Grade Group ≥2 cancers — those with clinically significant potential. Grade Group 1 cancers (Gleason 6) almost never spread and may not require treatment. Modern secondary biomarker tests (like PHI and 4Kscore) are specifically designed to help identify Grade Group ≥2 cancers.</p>
-      </div>
     </div>
   </section>
 
@@ -343,7 +341,7 @@
         </button>
         <div class="accordion-body">
           <p><strong>For whom:</strong> Typically for Grade Group 1 (Gleason 6) and selected Grade Group 2 low-risk cancers.</p>
-          <p><strong>What it involves:</strong> Regular PSA testing (typically every 3–6 months), repeat biopsies every 1–3 years, and periodic MRI imaging. If the cancer shows signs of progression, treatment can then begin.</p>
+          <p><strong>What it involves:</strong> Regular PSA testing (every 3–6 months), repeat biopsies every 1–3 years, and periodic MRI. If the cancer shows signs of progression, treatment can then begin.</p>
           <p><strong>Goal:</strong> Avoid the side effects of treatment while catching any progression early. Research shows that many low-grade cancers never progress during a man's lifetime.</p>
           <div class="alert alert-info" style="margin-bottom:0;"><p>Active surveillance is not the same as "doing nothing." It is an active, guideline-endorsed management strategy with regular monitoring checkpoints.</p></div>
         </div>
@@ -357,8 +355,8 @@
         <div class="accordion-body">
           <p><strong>What it involves:</strong> Surgical removal of the entire prostate gland and seminal vesicles, often with lymph node sampling. Increasingly performed as a robotic-assisted (da Vinci) minimally invasive procedure.</p>
           <p><strong>Benefits:</strong> Removes the cancer entirely; PSA should drop to near-zero after surgery; allows precise pathological staging.</p>
-          <p><strong>Potential side effects:</strong> Urinary incontinence (temporary in most, but can be longer-lasting), erectile dysfunction (risk varies by nerve-sparing technique and age), and the general risks of surgery. Most men regain urinary control within weeks to months.</p>
-          <p><strong>Recovery:</strong> Typically 1–3 days in hospital; return to light activity in 2–4 weeks; full recovery 4–6 weeks.</p>
+          <p><strong>Potential side effects:</strong> Urinary incontinence (affects approximately 15–20% of men at 1 year; most recover over time), erectile dysfunction (affects 40–65% depending on age and nerve-sparing technique). Most men regain urinary control within weeks to months.</p>
+          <p><strong>Recovery:</strong> Typically 1–2 days in hospital; return to light activity in 2–4 weeks; full recovery 4–6 weeks.</p>
         </div>
       </div>
 
@@ -371,7 +369,7 @@
           <p>There are two primary forms of radiation therapy for prostate cancer:</p>
           <p><strong>External Beam Radiation Therapy (EBRT):</strong> High-energy X-ray beams are directed at the prostate from outside the body. Modern IMRT (Intensity-Modulated Radiation Therapy) and SBRT (Stereotactic Body Radiation Therapy) allow very precise targeting with fewer treatment sessions.</p>
           <p><strong>Brachytherapy (Seed Implants):</strong> Radioactive seeds are placed directly into the prostate tissue, delivering radiation from inside. Can be combined with external beam radiation for higher-risk disease.</p>
-          <p><strong>Potential side effects:</strong> Bowel changes (diarrhea, rectal irritation), urinary changes, and erectile dysfunction. These are generally less severe than with surgery in the short term, but some effects may develop over years.</p>
+          <p><strong>Potential side effects:</strong> Bowel changes (diarrhea, rectal irritation), urinary changes (frequency, urgency), and erectile dysfunction (30–50% at 2–3 years). Effects develop more gradually than with surgery and some may persist.</p>
         </div>
       </div>
 
@@ -382,9 +380,9 @@
         </button>
         <div class="accordion-body">
           <p>Prostate cancer cells use testosterone (androgen) to grow. Hormone therapy reduces testosterone levels in the body, slowing or stopping cancer growth.</p>
-          <p><strong>Forms:</strong> Injections (Lupron, Zoladex), oral medications (enzalutamide, apalutamide, abiraterone), or surgical removal of the testes (rarely done today).</p>
+          <p><strong>Forms:</strong> Injections (leuprolide/Lupron, goserelin/Zoladex), oral medications (enzalutamide, apalutamide, abiraterone), or surgical removal of the testes (orchiectomy, rarely performed today).</p>
           <p><strong>Used for:</strong> High-risk localized cancer (combined with radiation), locally advanced cancer, metastatic disease, or when cancer returns after initial treatment.</p>
-          <p><strong>Side effects:</strong> Hot flashes, fatigue, loss of libido, erectile dysfunction, mood changes, bone density loss, metabolic effects. Regular monitoring and supportive care can help manage these.</p>
+          <p><strong>Side effects:</strong> Hot flashes, fatigue, loss of libido, erectile dysfunction, mood changes, bone density loss, metabolic effects including increased risk of diabetes and cardiovascular disease. Regular monitoring and supportive care can help manage these.</p>
         </div>
       </div>
 
@@ -395,8 +393,8 @@
         </button>
         <div class="accordion-body">
           <p>For selected patients with localized, low-to-intermediate risk cancer in one region of the prostate, focal therapies aim to treat only the affected area while sparing the rest of the gland — potentially reducing side effects.</p>
-          <p><strong>Examples:</strong> High-Intensity Focused Ultrasound (HIFU), cryotherapy, MRI-guided focused ultrasound (MRgFUS), photodynamic therapy.</p>
-          <p><strong>Current status:</strong> Still considered investigational at many centers. Evidence base is growing but long-term data are less mature than for surgery or radiation. Best discussed with an experienced urologist or radiation oncologist in a center that offers these options.</p>
+          <p><strong>Examples:</strong> High-Intensity Focused Ultrasound (HIFU), cryotherapy, MRI-guided focused ultrasound (MRgFUS).</p>
+          <p><strong>Current status:</strong> Still considered investigational at many centers. Evidence base is growing but long-term data are less mature than for surgery or radiation. Best discussed with an experienced urologist or radiation oncologist.</p>
         </div>
       </div>
 
@@ -408,37 +406,19 @@
         <div class="accordion-body">
           <p>For metastatic or hormone-resistant (castration-resistant) prostate cancer, additional therapies may be used:</p>
           <ul style="padding-left:1.25rem;">
-            <li style="margin-bottom:0.4rem;"><strong>Chemotherapy:</strong> Docetaxel and cabazitaxel are used in metastatic disease</li>
-            <li style="margin-bottom:0.4rem;"><strong>PARP Inhibitors:</strong> Olaparib, rucaparib — effective in men with BRCA or other DNA repair mutations</li>
-            <li style="margin-bottom:0.4rem;"><strong>Lutetium-177 PSMA Therapy:</strong> A targeted radioligand therapy approved for PSMA-positive metastatic castration-resistant prostate cancer</li>
-            <li><strong>Immunotherapy:</strong> Sipuleucel-T (Provenge) — a personalized immune therapy for asymptomatic or minimally symptomatic metastatic castration-resistant prostate cancer</li>
+            <li style="margin-bottom:0.4rem;"><strong>Chemotherapy:</strong> Docetaxel and cabazitaxel are used in metastatic castration-resistant disease; docetaxel is also used upfront with ADT for high-volume metastatic disease.</li>
+            <li style="margin-bottom:0.4rem;"><strong>PARP Inhibitors:</strong> Olaparib, rucaparib, niraparib — effective in men with BRCA2, BRCA1, ATM, or other DNA repair mutations in the metastatic setting.</li>
+            <li style="margin-bottom:0.4rem;"><strong>Lutetium-177 PSMA Therapy (Lu-PSMA-617):</strong> A targeted radioligand therapy (Pluvicto) FDA-approved (2022) for PSMA-positive metastatic castration-resistant prostate cancer after prior taxane chemotherapy and novel hormonal therapy.</li>
+            <li><strong>Immunotherapy:</strong> Sipuleucel-T (Provenge) — a personalized dendritic cell-based immune therapy approved for asymptomatic or minimally symptomatic metastatic castration-resistant prostate cancer.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== DRE Explained ========== -->
-  <section class="section" id="dre">
-    <div class="section-title">
-      <span class="tag">Procedure Explained</span>
-      <h2>What Is a Digital Rectal Exam (DRE)?</h2>
-    </div>
-    <div class="card">
-      <p>The Digital Rectal Exam (DRE) is a brief physical examination in which a physician — wearing a gloved, lubricated finger — gently inserts a finger into the rectum to feel the back surface of the prostate. The word "digital" refers to the finger, not a computer.</p>
-      <p><strong>What the doctor feels for:</strong> The normal prostate feels smooth and rubbery. An abnormal DRE might reveal a hard nodule, firm area, or asymmetry — which can independently indicate the need for further evaluation, regardless of the PSA level.</p>
-      <p><strong>Duration:</strong> The exam itself takes approximately 10–15 seconds.</p>
-      <p><strong>Discomfort level:</strong> Most men describe it as uncomfortable but not painful. It is a brief and important part of prostate cancer screening, particularly when PSA is ≥2.0 ng/mL.</p>
-      <div class="alert alert-info mt-2">
-        <div class="alert-title">📋 Guideline Note</div>
-        <p>Per AUA/SUO 2023/2026 guidelines, DRE is recommended alongside PSA when PSA is ≥2.0 ng/mL. Importantly, PSA blood should ideally be drawn <em>before</em> a DRE, as the exam can cause a transient elevation in PSA levels.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Next Steps -->
   <section class="section">
-    <div class="card" style="border-left:4px solid var(--secondary);">
+    <div class="card" style="border-left:3px solid #111;">
       <h3 style="margin-bottom:0.75rem;">Continue Your Pathway</h3>
       <div class="grid-2" style="gap:0.75rem;">
         <a href="results.html" class="btn btn-primary" style="justify-content:center;">Interpret My PSA Results →</a>
@@ -450,11 +430,11 @@
 </main>
 
 <div class="disclaimer-bar">
-  <strong>Medical Disclaimer:</strong> This educational content is for informational purposes only. It does not constitute medical advice or a clinical recommendation. Always consult with a qualified healthcare provider regarding your individual health situation.
+  <strong>Medical Disclaimer:</strong> This website is for educational and informational purposes only and does not constitute medical advice, diagnosis, or treatment.
 </div>
 
 <footer class="site-footer">
-  <p><strong style="color:#cde6f7;">Prostate Screening Pathway</strong></p>
+  <p><strong style="color:#eee;">Prostate Screening Pathway</strong></p>
   <p style="margin-top:0.5rem;">
     <a href="index.html">Home</a> &bull; <a href="screening.html">Who Should Be Screened</a> &bull;
     <a href="results.html">PSA Results</a> &bull; <a href="education.html">Education</a> &bull; <a href="data.html">Data &amp; References</a>
@@ -462,5 +442,21 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script>
+// Accordion
+document.querySelectorAll('.accordion-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var body = this.nextElementSibling;
+    var isOpen = body.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.accordion-body').forEach(function(b) { b.classList.remove('open'); });
+    document.querySelectorAll('.accordion-btn').forEach(function(b) { b.classList.remove('open'); });
+    if (!isOpen) {
+      body.classList.add('open');
+      this.classList.add('open');
+    }
+  });
+});
+</script>
 </body>
 </html>
