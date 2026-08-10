@@ -94,7 +94,7 @@
           <div class="checkbox-group">
             <label class="checkbox-item">
               <input type="radio" name="family-hx" value="strong" id="fhx-strong" />
-              <span><strong>Yes — strong family history:</strong> One or more first-degree relatives (father, brother, or son) diagnosed with prostate cancer before age 65, OR two or more relatives on the same side of the family diagnosed at any age</span>
+              <span><strong>Yes — strong family history:</strong> One or more first-degree relatives (father, brother, or son) diagnosed with prostate cancer before age 60, OR two or more relatives on the same side of the family diagnosed at any age</span>
             </label>
             <label class="checkbox-item">
               <input type="radio" name="family-hx" value="limited" />
@@ -137,7 +137,7 @@
 
           <!-- Known Gene Mutations (Yes/No) -->
           <div>
-            <label class="form-label" style="font-size:0.875rem;">Have you or any close family member been found to carry any of the following high-risk gene mutations: BRCA, ATM, CHEK2, HOXB13, or Lynch Syndrome?</label>
+            <label class="form-label" style="font-size:0.875rem;">Have you or any close family member been found to carry any of the following high-risk gene mutations: BRCA, ATM, CHEK2, HOXB13, NBS1, or Lynch Syndrome?</label>
             <div class="checkbox-group" style="margin-top:0.4rem;">
               <label class="checkbox-item">
                 <input type="radio" name="mutation-yn" value="yes" id="mut-yes" />
@@ -225,7 +225,7 @@
       <p>Based on AUA/SUO Guidelines</p>
     </div>
 
-    <div class="table-wrap card" style="padding:0;overflow:hidden;">
+    <div class="table-wrap card" style="padding:0;overflow-x:auto;overflow-y:hidden;">
       <table>
         <thead>
           <tr>
@@ -239,7 +239,7 @@
           <tr>
             <td><span class="risk-chip green">Standard Risk</span></td>
             <td><strong>Ages 45–50</strong> (baseline PSA)</td>
-            <td>Every 2–4 years if PSA &lt;1.0 ng/mL<br/>Annually if PSA 1–3 ng/mL</td>
+            <td>Every 2–4 years if PSA &lt;1.0 ng/mL (ages 50–69)<br/>Annually if PSA 1–3 ng/mL</td>
             <td>No Black ancestry, no strong family history, no known high-risk gene mutations</td>
           </tr>
           <tr>
@@ -252,7 +252,7 @@
             <td><span class="risk-chip red">High Risk</span></td>
             <td><strong>Ages 40–45</strong></td>
             <td>Annually</td>
-            <td>Strong family history of prostate cancer, OR known BRCA/ATM/CHEK2/HOXB13/Lynch Syndrome mutation</td>
+            <td>Strong family history of prostate cancer, OR known BRCA/ATM/CHEK2/HOXB13/NBS1/Lynch Syndrome mutation</td>
           </tr>
           <tr>
             <td><span class="risk-chip" style="background:#f0f0f0;color:#555;">Age 70–75+ / PSA &lt;3.0</span></td>
@@ -290,7 +290,7 @@
   </section>
 
   <!-- AUA Guideline Note -->
-  <p style="font-size:0.78rem;color:var(--text-light);margin-top:1rem;">Content reflects the American Urological Association Society of Urologic Oncology guidelines for early detection of prostate cancer.</p>
+  <p style="font-size:0.78rem;color:var(--text-light);margin-top:1rem;">Content reflects the American Urological Association Society of Urologic Oncology guidelines for early detection of prostate cancer, including the 2026 guideline amendment.</p>
 
 </main>
 
@@ -307,6 +307,7 @@
     <a href="education.html">Education</a> &bull;
     <a href="data.html">Data &amp; References</a>
   </p>
+  <p style="margin-top:0.75rem;font-size:0.75rem;">Recommendations reflect American Urological Association Society of Urologic Oncology 2026 guidelines for early detection of prostate cancer.</p>
 </footer>
 
 <script src="js/nav.js"></script>
@@ -362,11 +363,11 @@ function runStratification() {
 
   if (hasStrongFHx) {
     riskTier = 'high';
-    highRiskReasons.push('Strong family history of prostate cancer (first-degree relative diagnosed before age 65, or ≥2 relatives on the same side)');
+    highRiskReasons.push('Strong family history of prostate cancer (first-degree relative diagnosed before age 60, or ≥2 relatives on the same side)');
   }
   if (hasMutation) {
     riskTier = 'high';
-    highRiskReasons.push('Known high-risk gene mutation (BRCA, ATM, CHEK2, HOXB13, or Lynch Syndrome)');
+    highRiskReasons.push('Known high-risk gene mutation (BRCA, ATM, CHEK2, HOXB13, NBS1, or Lynch Syndrome)');
   }
   if (isBlack) {
     if (riskTier === 'high') {
@@ -389,7 +390,7 @@ function runStratification() {
     ? 'Annually'
     : riskTier === 'intermediate'
     ? 'Every 1–2 years'
-    : 'Every 2–4 years if PSA &lt;1.0 ng/mL; annually if PSA 1–3 ng/mL';
+    : 'Every 2–4 years if PSA &lt;1.0 ng/mL (ages 50–69); annually if PSA 1–3 ng/mL';
 
   // Colors
   var tierColor = riskTier === 'high' ? 'var(--red)' : riskTier === 'intermediate' ? '#b85b00' : 'var(--green)';
@@ -495,7 +496,7 @@ function evaluateQuiz() {
 
   resultEl.innerHTML = html;
   resultEl.style.display = 'block';
-  resultEl.scrollIntoView({behavior:'smooth', block:'start'});
+  resultEl.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 </script>
 </body>

@@ -726,6 +726,7 @@ tr:hover td { background: #f8fafc; }
   padding: 1.25rem;
   border-radius: var(--radius-sm);
   display: none;
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
 
 .quiz-result.show { display: block; }

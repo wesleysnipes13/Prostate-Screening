@@ -98,14 +98,14 @@
         </div>
         <div class="form-group">
           <label class="form-label">Do you have a strong family history of prostate cancer?</label>
-          <p style="font-size:0.825rem;color:var(--text-light);margin-bottom:0.5rem;">(First-degree relative diagnosed before age 65, or ≥2 relatives on same side)</p>
+          <p style="font-size:0.825rem;color:var(--text-light);margin-bottom:0.5rem;">(First-degree relative diagnosed before age 60, or ≥2 relatives on same side)</p>
           <div class="checkbox-group">
             <label class="checkbox-item"><input type="radio" name="r-fhx" value="yes" /><span>Yes</span></label>
             <label class="checkbox-item"><input type="radio" name="r-fhx" value="no" checked /><span>No</span></label>
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label">Do you carry a high-risk gene mutation (BRCA2, BRCA1, ATM, CHEK2, HOXB13, or Lynch Syndrome)?</label>
+          <label class="form-label">Do you carry a high-risk gene mutation (BRCA2, BRCA1, ATM, CHEK2, HOXB13, NBS1, or Lynch Syndrome)?</label>
           <div class="checkbox-group">
             <label class="checkbox-item"><input type="radio" name="r-mut" value="yes" /><span>Yes</span></label>
             <label class="checkbox-item"><input type="radio" name="r-mut" value="no" checked /><span>No / Not tested</span></label>
@@ -336,7 +336,7 @@
         <h2>Multiparametric MRI (mpMRI) &amp; PI-RADS Scoring</h2>
         <p>If your PSA remains elevated after confound exclusion and secondary biomarker evaluation, an MRI of the prostate is typically the next step — usually before biopsy.</p>
       </div>
-      <div class="table-wrap card" style="padding:0;overflow:hidden;">
+      <div class="table-wrap card" style="padding:0;overflow-x:auto;overflow-y:hidden;">
         <table>
           <thead>
             <tr><th>PI-RADS Score</th><th>Suspicion Level</th><th>Typical Recommendation</th></tr>
@@ -393,6 +393,7 @@
     <a href="index.html">Home</a> &bull; <a href="screening.html">Who Should Be Screened</a> &bull;
     <a href="results.html">PSA Results</a> &bull; <a href="education.html">Education</a> &bull; <a href="data.html">Data &amp; References</a>
   </p>
+  <p style="margin-top:0.75rem;font-size:0.75rem;">Recommendations reflect American Urological Association Society of Urologic Oncology 2026 guidelines for early detection of prostate cancer.</p>
 </footer>
 
 <script src="js/nav.js"></script>
@@ -592,6 +593,12 @@ function buildResultsDetail(score, level, color, highRisk, threshold, ageGroup, 
   if (isStopping) {
     html += '<div class="alert alert-info"><div class="alert-title">📋 Age-Based Screening Consideration</div>';
     html += '<p>Based on your age (' + d.age + ') and PSA level (' + d.psa.toFixed(2) + ' ng/mL), you may be in the category where continued routine screening offers limited additional benefit. Discuss with your physician whether continued PSA testing is appropriate for your individual situation.</p></div>';
+  }
+
+  // Prior negative biopsy — screening should continue
+  if (d.biopsy === 'negative') {
+    html += '<div class="alert alert-info"><div class="alert-title">📋 Prior Negative Biopsy — Continue Routine Screening</div>';
+    html += '<p>A negative biopsy does not mean screening should stop. Per AUA/SUO guidelines, clinicians should not discontinue prostate cancer screening based solely on a negative biopsy result — continue routine PSA testing on your normal interval, or sooner if your risk factors or life expectancy warrant it.</p></div>';
   }
 
   // Primary results card
@@ -893,6 +900,7 @@ function downloadPhysicianBrief() {
   var points = [];
   if (d.hasConfound) points.push('Repeat PSA after confound resolution before further evaluation.');
   if (d.on5AR) points.push('Interpret PSA in context of 5-alpha reductase inhibitor use (PSA may be ~50% suppressed).');
+  if (d.biopsy === 'negative') points.push('Prior negative biopsy — per AUA/SUO guidelines, do not discontinue screening based solely on this result; continue routine PSA testing.');
   if (d.riskLevel === 'low') {
     points.push('PSA is within expected range — continue routine scheduled screening.');
     points.push('Confirm next recommended PSA interval with physician.');
