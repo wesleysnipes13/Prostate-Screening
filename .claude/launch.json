@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "prostate-screening",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "-p", "8765", "/Users/wesboland/Documents/GitHub/Prostate-Screening"],
+      "port": 8765
+    }
+  ]
+}
