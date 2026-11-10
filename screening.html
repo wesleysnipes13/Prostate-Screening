@@ -7,7 +7,8 @@
   <title>Who Should Be Screened — Prostate Cancer Screening Pathway</title>
   <meta name="description" content="Determine if PSA screening is right for you. Complete a risk stratification questionnaire and take the PSA self-assessment quiz." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -15,13 +16,13 @@
 <!-- =================== NAVIGATION =================== -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <div class="nav-logo" aria-label="Prostate Cancer Screening Pathway">
-      <div class="nav-logo-icon" aria-hidden="true">🩺</div>
-      <div class="nav-logo-text">Prostate Cancer Screening Pathway<span class="nav-logo-sub">Patient Information Resource</span></div>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Prostate Cancer Screening Pathway, home">
+      <img class="nav-logo-icon" src="favicon.svg" alt="" width="28" height="28" />
+      <span class="nav-logo-text">Prostate Cancer Screening Pathway<span class="nav-logo-sub">Patient Information Resource</span></span>
+    </a>
     <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
-      <li><a href="screening.html" class="active">Who Should Be Screened</a></li>
+      <li><a href="screening.html">Who Should Be Screened</a></li>
       <li><a href="results.html">Understand Your PSA</a></li>
       <li><a href="education.html">Further Education</a></li>
       <li><a href="data.html">What the Data Says</a></li>
@@ -42,7 +43,7 @@
 </div>
 
 <!-- =================== PAGE HEADER =================== -->
-<header class="hero" style="padding:2.5rem 1.25rem 3rem;">
+<header class="hero hero-sub">
   <div class="hero-badge">Step 1 of Your Pathway</div>
   <h1>Who Should Be Screened?</h1>
   <p>Answer a few questions to find out your risk category, when you should start screening, and how often to be tested. No PSA result required for this section.</p>
@@ -211,7 +212,7 @@
 
       <!-- Always consult doctor note -->
       <div class="alert alert-info mt-3" style="border-left-color:#3a7bd5;">
-        <div class="alert-title">🩺 Talk to Your Doctor</div>
+        <div class="alert-title">Talk to Your Doctor</div>
         <p>As with all medical decisions, you are encouraged to speak with your physician about PSA prostate cancer screening and whether it may be right for you. This quiz is a tool for reflection, not a substitute for professional medical advice.</p>
       </div>
     </div>
@@ -281,7 +282,7 @@
       <span class="tag">Next Steps</span>
       <h2>Ready to Interpret a PSA Result?</h2>
     </div>
-    <div class="card" style="border-left:3px solid #111;">
+    <div class="card" style="border-left:3px solid var(--accent);">
       <p>If you've already had a PSA test and want to understand what your number means — including age-adjusted thresholds, secondary biomarkers, and what questions to bring to your doctor — head to the next section.</p>
       <div class="mt-2">
         <a href="results.html" class="btn btn-primary">Go to PSA Results Calculator →</a>
@@ -299,7 +300,7 @@
 </div>
 
 <footer class="site-footer">
-  <p><strong style="color:#eee;">Prostate Cancer Screening Pathway</strong></p>
+  <p><strong style="color:#fff;">Prostate Cancer Screening Pathway</strong></p>
   <p style="margin-top:0.5rem;">
     <a href="index.html">Home</a> &bull;
     <a href="screening.html">Who Should Be Screened</a> &bull;
@@ -385,8 +386,12 @@ function runStratification() {
   }
 
   // Frequency / start age
+  // Routine screening covers ages up to 69. From age 70 the guideline calls for an individualized decision.
+  var isOlder = age >= 70;
   var startAge = riskTier === 'standard' ? '45–50' : '40–45';
-  var frequency = riskTier === 'high'
+  var frequency = isOlder
+    ? 'Individualized at age 70 and older. Decide with your doctor.'
+    : riskTier === 'high'
     ? 'Annually'
     : riskTier === 'intermediate'
     ? 'Every 1–2 years'
@@ -394,13 +399,12 @@ function runStratification() {
 
   // Colors
   var tierColor = riskTier === 'high' ? 'var(--red)' : riskTier === 'intermediate' ? '#b85b00' : 'var(--green)';
-  var tierEmoji = riskTier === 'high' ? '🔴' : riskTier === 'intermediate' ? '🟠' : '🟢';
   var tierLabel = riskTier === 'high' ? 'HIGH RISK' : riskTier === 'intermediate' ? 'INTERMEDIATE RISK' : 'STANDARD RISK';
 
   var html = '';
 
   html += '<div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">';
-  html += '<div style="font-size:2.5rem;">' + tierEmoji + '</div>';
+  html += '<span class="tier-dot" style="background:' + tierColor + ';" aria-hidden="true"></span>';
   html += '<div><div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-light);margin-bottom:0.25rem;">Your Risk Category</div>';
   html += '<div style="font-size:1.75rem;font-weight:800;color:' + tierColor + ';">' + tierLabel + '</div></div>';
   html += '</div>';
@@ -436,13 +440,19 @@ function runStratification() {
   var startAgeNum = parseInt(startAge.split('–')[0], 10);
   if (age < startAgeNum) {
     html += '<div class="alert alert-success"><div class="alert-title">Not Yet Time to Screen</div><p>You are younger than the recommended starting age for your risk category. Continue healthy habits and discuss with your doctor when to begin baseline PSA testing.</p></div>';
+  } else if (isOlder) {
+    html += '<div class="alert alert-warning"><div class="alert-title">Screening at Age 70 and Older Is an Individual Decision</div><p>At age ' + age + ', you are past the age range (up to 69) for routine PSA screening. Screening at 70 and older depends on your overall health, a life expectancy of more than 10 years, and your earlier PSA results.' + (riskTier !== 'standard' ? ' Your risk factors are part of that decision.' : '') + '</p><p>Men aged 60 or older with a PSA below 1.0 ng/mL have a very low risk of metastatic or fatal prostate cancer and may not benefit from more testing.</p></div>';
   } else {
     html += '<div class="alert alert-info"><div class="alert-title">What to Do Next</div><p>Based on your age (' + age + ') and risk category, you are in the recommended screening window. Ask your doctor about scheduling a PSA blood test. Complete the PSA Self-Assessment Quiz below to further reflect on whether screening aligns with your personal values.</p></div>';
   }
 
-  html += '<div class="card" style="border-left:3px solid #111;"><div style="font-size:0.875rem;font-weight:700;margin-bottom:0.5rem;">🩺 Conversation Starter for Your Doctor</div>';
+  html += '<div class="card" style="border-left:3px solid var(--accent);"><div style="font-size:0.875rem;font-weight:700;margin-bottom:0.5rem;">Questions to Bring to Your Doctor</div>';
   html += '<ul style="margin:0;padding-left:1.25rem;font-size:0.875rem;color:var(--text-mid);">';
-  if (riskTier === 'high' || riskTier === 'intermediate') {
+  if (isOlder) {
+    html += '<li style="margin-bottom:0.3rem;">"Given my age and overall health, does PSA screening still make sense for me?"</li>';
+    html += '<li style="margin-bottom:0.3rem;">"What do my earlier PSA results tell you about my risk?"</li>';
+    if (riskTier !== 'standard') html += '<li style="margin-bottom:0.3rem;">"How do my risk factors change that decision?"</li>';
+  } else if (riskTier === 'high' || riskTier === 'intermediate') {
     html += '<li style="margin-bottom:0.3rem;">"Given my risk factors, when should I start screening and how often?"</li>';
     html += '<li style="margin-bottom:0.3rem;">"Should I consider genetic counseling given my family history?"</li>';
   } else {
@@ -474,7 +484,7 @@ function evaluateQuiz() {
   }
 
   if (q1 === 'yes' || q2 === 'yes') {
-    html = '<div class="alert-title">⚠️ Screening May Not Be Right for You At This Time</div>';
+    html = '<div class="alert-title">Screening May Not Be Right for You At This Time</div>';
     if (q1 === 'yes') {
       html += '<p>You indicated concern about living with a low-risk cancer that does not require immediate treatment. This feeling is very common and valid. "Active surveillance" — monitoring a slow-growing cancer without immediately treating it — can cause significant anxiety for some men, even though it is a guideline-endorsed approach for low-risk disease.</p>';
     }
@@ -484,8 +494,8 @@ function evaluateQuiz() {
     html += '<p><strong>If you answered Yes to EITHER question above — Screening may not be right for you at this time. These concerns are worth discussing openly with your physician before making a decision.</strong></p>';
     resultEl.className = 'quiz-result alert alert-warning';
   } else if (q1 === 'no' && q2 === 'no') {
-    html = '<div class="alert-title">✅ Screening May Be Right for You</div>';
-    html += '<p>Based on your answers, PSA screening aligns with your values and preferences. If you meet the age and risk criteria (see the table above), talk to your doctor about when to begin or continue regular PSA testing.</p>';
+    html = '<div class="alert-title">Screening May Be Right for You</div>';
+    html += '<p>Based on your answers, PSA screening aligns with your values and preferences. If you meet the age and risk criteria (see the table below), talk to your doctor about when to begin or continue regular PSA testing.</p>';
     html += '<a href="results.html" class="btn btn-green" style="margin-top:0.75rem;">Go to PSA Results Calculator →</a>';
     resultEl.className = 'quiz-result alert alert-success';
   } else {

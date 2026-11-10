@@ -7,7 +7,8 @@
   <title>Prostate Cancer Screening Pathway — Home</title>
   <meta name="description" content="A patient-facing resource for understanding prostate cancer PSA screening, risk stratification, and shared decision-making with your physician." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -15,13 +16,10 @@
 <!-- =================== NAVIGATION =================== -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <div class="nav-logo" aria-label="Prostate Cancer Screening Pathway">
-      <div class="nav-logo-icon" aria-hidden="true">🩺</div>
-      <div class="nav-logo-text">
-        Prostate Cancer Screening Pathway
-        <span class="nav-logo-sub">Patient Information Resource</span>
-      </div>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Prostate Cancer Screening Pathway, home">
+      <img class="nav-logo-icon" src="favicon.svg" alt="" width="28" height="28" />
+      <span class="nav-logo-text">Prostate Cancer Screening Pathway<span class="nav-logo-sub">Patient Information Resource</span></span>
+    </a>
     <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="screening.html">Who Should Be Screened</a></li>
@@ -52,7 +50,7 @@
   <p>Evidence-based guidance to help you understand PSA screening, assess your personal risk, and have a more informed conversation with your doctor.</p>
   <div class="flex flex-wrap flex-center gap-1">
     <a href="screening.html" class="btn btn-white btn-lg">Am I a Candidate for Screening? →</a>
-    <a href="results.html" class="btn btn-lg" style="border:1.5px solid rgba(255,255,255,0.35);color:#fff;background:transparent;">I Have a PSA Result</a>
+    <a href="results.html" class="btn btn-ghost btn-lg">I Have a PSA Result</a>
   </div>
 </header>
 
@@ -76,18 +74,15 @@
 
     <div class="grid-3">
       <div class="card">
-        <div class="card-icon">🔬</div>
-        <h3 style="margin-top:0.75rem;">Based on Updated Guidelines</h3>
+        <h3 style="margin-bottom:0.5rem;">Based on Updated Guidelines</h3>
         <p>Content reflects the American Urological Association Society of Urologic Oncology guidelines for early detection of prostate cancer, including the 2026 guideline amendment, which may differ from other guidelines such as the USPSTF.</p>
       </div>
       <div class="card">
-        <div class="card-icon">🤝</div>
-        <h3 style="margin-top:0.75rem;">Shared Decision-Making</h3>
+        <h3 style="margin-bottom:0.5rem;">Shared Decision-Making</h3>
         <p>Every output is designed to support, not replace, a conversation with your doctor. You'll leave with questions to ask your doctor.</p>
       </div>
       <div class="card">
-        <div class="card-icon">🔒</div>
-        <h3 style="margin-top:0.75rem;">Your Privacy</h3>
+        <h3 style="margin-bottom:0.5rem;">Your Privacy</h3>
         <p>All data you enter stays in your browser. Nothing is transmitted to a server or stored. Your health information remains private.</p>
       </div>
     </div>
@@ -103,28 +98,24 @@
 
     <div class="grid-2">
       <a href="screening.html" class="nav-card">
-        <div class="nav-card-icon">🔍</div>
         <h3>Who Should Be Screened?</h3>
         <p>Find out if PSA screening is appropriate for your age and risk profile. Includes a risk stratification questionnaire and the PSA self-assessment quiz.</p>
         <div class="nav-card-arrow">→</div>
       </a>
 
       <a href="results.html" class="nav-card">
-        <div class="nav-card-icon">📊</div>
         <h3>Understanding Your PSA Results</h3>
         <p>Already have a PSA value? Enter your numbers to see how they compare to age-adjusted thresholds and generate a downloadable physician brief.</p>
         <div class="nav-card-arrow">→</div>
       </a>
 
       <a href="education.html" class="nav-card">
-        <div class="nav-card-icon">📖</div>
         <h3>Further Education</h3>
         <p>Learn about the prostate, what prostate cancer is, how it develops, common symptoms, and what treatment can involve.</p>
         <div class="nav-card-arrow">→</div>
       </a>
 
       <a href="data.html" class="nav-card">
-        <div class="nav-card-icon">📈</div>
         <h3>What the Data Tells Us</h3>
         <p>Explore patient-friendly summaries of the research, interactive risk infographics, and the full list of clinical references.</p>
         <div class="nav-card-arrow">→</div>
@@ -141,7 +132,7 @@
 
     <div class="grid-3">
       <div class="card text-center">
-        <div style="font-size:2.25rem;font-weight:800;color:#1a5276;margin-bottom:0.25rem;">1 in 8</div>
+        <div style="font-size:2.25rem;font-weight:800;color:var(--primary);margin-bottom:0.25rem;">1 in 8</div>
         <p style="font-size:0.875rem;">American men will be diagnosed with prostate cancer in their lifetime.<sup>1</sup></p>
       </div>
       <div class="card text-center">
@@ -149,8 +140,8 @@
         <p style="font-size:0.875rem;">Black men face a significantly higher lifetime risk of prostate cancer.<sup>2</sup></p>
       </div>
       <div class="card text-center">
-        <div style="font-size:2.25rem;font-weight:800;color:var(--green);margin-bottom:0.25rem;">&gt;97%</div>
-        <p style="font-size:0.875rem;">Five-year survival rate when prostate cancer is caught at a localized stage.</p>
+        <div style="font-size:2.25rem;font-weight:800;color:var(--green);margin-bottom:0.25rem;">&gt;99%</div>
+        <p style="font-size:0.875rem;">Five-year relative survival rate when prostate cancer is caught at a localized stage.<sup>1</sup></p>
       </div>
     </div>
   </section>
@@ -184,7 +175,7 @@
 
 <!-- =================== FOOTER =================== -->
 <footer class="site-footer">
-  <p><strong style="color:#eee;">Prostate Cancer Screening Pathway</strong></p>
+  <p><strong style="color:#fff;">Prostate Cancer Screening Pathway</strong></p>
   <p style="margin-top:0.5rem;">
     <a href="index.html">Home</a> &bull;
     <a href="screening.html">Who Should Be Screened</a> &bull;

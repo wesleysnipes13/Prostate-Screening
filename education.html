@@ -7,7 +7,8 @@
   <title>Further Education — Prostate Cancer Screening Pathway</title>
   <meta name="description" content="Learn about the prostate gland, what prostate cancer is, how it develops, its symptoms, and what diagnosis and treatment involve." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -15,15 +16,15 @@
 <!-- =================== NAVIGATION =================== -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <div class="nav-logo" aria-label="Prostate Cancer Screening Pathway">
-      <div class="nav-logo-icon" aria-hidden="true">🩺</div>
-      <div class="nav-logo-text">Prostate Cancer Screening Pathway<span class="nav-logo-sub">Patient Information Resource</span></div>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Prostate Cancer Screening Pathway, home">
+      <img class="nav-logo-icon" src="favicon.svg" alt="" width="28" height="28" />
+      <span class="nav-logo-text">Prostate Cancer Screening Pathway<span class="nav-logo-sub">Patient Information Resource</span></span>
+    </a>
     <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="screening.html">Who Should Be Screened</a></li>
       <li><a href="results.html">Understand Your PSA</a></li>
-      <li><a href="education.html" class="active">Further Education</a></li>
+      <li><a href="education.html">Further Education</a></li>
       <li><a href="data.html">What the Data Says</a></li>
     </ul>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -42,7 +43,7 @@
 </div>
 
 <!-- =================== PAGE HEADER =================== -->
-<header class="hero" style="padding:2.5rem 1.25rem 3rem;">
+<header class="hero hero-sub">
   <div class="hero-badge">Educational Resource</div>
   <h1>Further Education</h1>
   <p>Understanding the prostate, how cancer develops, what symptoms to watch for, and what diagnosis and treatment involve — in plain language.</p>
@@ -152,11 +153,11 @@
 
       <div class="grid-2 mt-3" style="gap:1rem;">
         <div style="background:#f0f9ff;border:1px solid #b3d8ef;border-radius:var(--radius-sm);padding:1rem;">
-          <h4 style="color:var(--green);margin-bottom:0.5rem;">🐢 Slow-Growing (Low Grade)</h4>
+          <h4 style="color:var(--green);margin-bottom:0.5rem;">Slow-Growing (Low Grade)</h4>
           <p style="font-size:0.875rem;">Many prostate cancers grow very slowly — taking years or even decades to become a clinical problem. These may be managed with active surveillance (careful monitoring without immediate treatment).</p>
         </div>
         <div style="background:#fff8f8;border:1px solid #f5b7b1;border-radius:var(--radius-sm);padding:1rem;">
-          <h4 style="color:var(--red);margin-bottom:0.5rem;">⚡ Aggressive (High Grade)</h4>
+          <h4 style="color:var(--red);margin-bottom:0.5rem;">Aggressive (High Grade)</h4>
           <p style="font-size:0.875rem;">A minority of prostate cancers are aggressive and can spread to lymph nodes, bones, and other organs (metastasize) if not treated. Early detection through PSA screening can identify these before they spread.</p>
         </div>
       </div>
@@ -417,7 +418,7 @@
 
   <!-- Next Steps -->
   <section class="section">
-    <div class="card" style="border-left:3px solid #111;">
+    <div class="card" style="border-left:3px solid var(--accent);">
       <h3 style="margin-bottom:0.75rem;">Continue Your Pathway</h3>
       <div class="grid-2" style="gap:0.75rem;">
         <a href="results.html" class="btn btn-primary" style="justify-content:center;">Interpret My PSA Results →</a>
@@ -433,7 +434,7 @@
 </div>
 
 <footer class="site-footer">
-  <p><strong style="color:#eee;">Prostate Cancer Screening Pathway</strong></p>
+  <p><strong style="color:#fff;">Prostate Cancer Screening Pathway</strong></p>
   <p style="margin-top:0.5rem;">
     <a href="index.html">Home</a> &bull; <a href="screening.html">Who Should Be Screened</a> &bull;
     <a href="results.html">PSA Results</a> &bull; <a href="education.html">Education</a> &bull; <a href="data.html">Data &amp; References</a>
