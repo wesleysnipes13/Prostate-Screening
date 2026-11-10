@@ -7,7 +7,8 @@
   <title>What the Data Tells Us — Prostate Cancer Screening Pathway</title>
   <meta name="description" content="Patient-friendly data summaries, interactive risk infographics, and full clinical references for prostate cancer PSA screening." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
   <!-- Chart.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
@@ -25,16 +26,16 @@
 <!-- =================== NAVIGATION =================== -->
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <div class="nav-logo" aria-label="Prostate Cancer Screening Pathway">
-      <div class="nav-logo-icon" aria-hidden="true">🩺</div>
-      <div class="nav-logo-text">Prostate Cancer Screening Pathway<span class="nav-logo-sub">Patient Information Resource</span></div>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Prostate Cancer Screening Pathway, home">
+      <img class="nav-logo-icon" src="favicon.svg" alt="" width="28" height="28" />
+      <span class="nav-logo-text">Prostate Cancer Screening Pathway<span class="nav-logo-sub">Patient Information Resource</span></span>
+    </a>
     <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="screening.html">Who Should Be Screened</a></li>
       <li><a href="results.html">Understand Your PSA</a></li>
       <li><a href="education.html">Further Education</a></li>
-      <li><a href="data.html" class="active">What the Data Says</a></li>
+      <li><a href="data.html">What the Data Says</a></li>
     </ul>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
@@ -52,7 +53,7 @@
 </div>
 
 <!-- =================== PAGE HEADER =================== -->
-<header class="hero" style="padding:2.5rem 1.25rem 3rem;">
+<header class="hero hero-sub">
   <div class="hero-badge">Evidence Summary</div>
   <h1>What the Data Tells Us</h1>
   <p>Patient-friendly summaries of the clinical research, interactive risk infographics, and a complete reference list — so you can understand the science behind PSA screening decisions.</p>
@@ -82,26 +83,22 @@
     </div>
     <div class="grid-2">
       <div class="card" style="border-top:3px solid var(--green);">
-        <div style="font-size:1.5rem;margin-bottom:0.5rem;">✅</div>
         <h4>PSA Screening Reduces Prostate Cancer Mortality</h4>
-        <p>The ERSPC (European Randomized Study of Screening for Prostate Cancer) found a 21% relative reduction in prostate cancer deaths in the PSA screening group after 16 years of follow-up. In high-compliance centers, the reduction was even greater.</p>
+        <p>The ERSPC (European Randomized Study of Screening for Prostate Cancer) found a 21% relative reduction in prostate cancer deaths in the PSA screening group at 13 years of follow-up, and a 20% reduction at 16 years. In high-compliance centers, the reduction was even greater.</p>
         <p>However, there was no change in overall mortality (death from any cause), which is why PSA screening is not recommended for everyone and requires shared decision-making with a physician.</p>
-        <p style="font-size:0.78rem;color:var(--text-light);">Source: Schröder FH et al., ERSPC Trial; AUA/SUO Guideline 2026</p>
+        <p style="font-size:0.78rem;color:var(--text-light);">Sources: Schröder FH et al., Lancet 2014; Hugosson J et al., Eur Urol 2019; AUA/SUO Guideline 2026</p>
       </div>
       <div class="card" style="border-top:3px solid #1a5276;">
-        <div style="font-size:1.5rem;margin-bottom:0.5rem;">📅</div>
         <h4>Early Detection Dramatically Improves Survival</h4>
         <p>When prostate cancer is detected at a localized stage (confined to the prostate), the 5-year relative survival rate exceeds 99%. Once cancer has spread to distant organs (metastatic), the 5-year survival rate drops to approximately 32%.</p>
         <p style="font-size:0.78rem;color:var(--text-light);">Source: SEER Cancer Statistics Database (NCI), 2024</p>
       </div>
       <div class="card" style="border-top:3px solid var(--yellow);">
-        <div style="font-size:1.5rem;margin-bottom:0.5rem;">⚖️</div>
         <h4>Overdiagnosis Is a Real Trade-Off</h4>
         <p>PSA screening leads to detection of some cancers that may never have caused symptoms or death during a man's lifetime — a phenomenon called overdiagnosis. Estimates suggest that for every prostate cancer death prevented by screening, approximately 3–5 men may be overdiagnosed and potentially overtreated.</p>
         <p style="font-size:0.78rem;color:var(--text-light);">Source: Welch &amp; Albertsen, J Natl Cancer Inst; AUA/SUO Guideline 2026</p>
       </div>
       <div class="card" style="border-top:3px solid var(--red);">
-        <div style="font-size:1.5rem;margin-bottom:0.5rem;">⚡</div>
         <h4>Black Men Face Disproportionate Risk</h4>
         <p>Black men are approximately 1.7 times more likely to develop prostate cancer and 2.1 times more likely to die from it compared to white men. Black men also tend to develop cancer at younger ages and with more aggressive tumor characteristics — making earlier screening particularly important.</p>
         <p style="font-size:0.78rem;color:var(--text-light);">Source: ACS Cancer Facts &amp; Figures 2024; AUA Guidelines</p>
@@ -147,16 +144,16 @@
 
     <div class="grid-2">
       <div class="card" style="border-top:3px solid var(--green);">
-        <h3 style="color:var(--green);margin-bottom:1rem;">✅ Potential Benefits</h3>
+        <h3 style="color:var(--green);margin-bottom:1rem;">Potential Benefits</h3>
         <ul style="padding-left:1.25rem;">
           <li style="margin-bottom:0.6rem;"><strong>Earlier cancer detection:</strong> Catching cancer when it is confined to the prostate, when treatment is most effective and curable (5-year survival &gt;99% for localized disease).</li>
-          <li style="margin-bottom:0.6rem;"><strong>Reduced cancer mortality:</strong> The ERSPC trial showed a 21% relative reduction in prostate cancer deaths with PSA screening over 16 years.</li>
+          <li style="margin-bottom:0.6rem;"><strong>Reduced cancer mortality:</strong> The ERSPC trial showed a 20–21% relative reduction in prostate cancer deaths with PSA screening over 13 to 16 years.</li>
           <li style="margin-bottom:0.6rem;"><strong>Baseline tracking:</strong> A normal PSA provides reassurance and allows changes to be tracked over time.</li>
           <li><strong>Less aggressive treatment:</strong> Cancers caught early may be managed with active surveillance or less extensive procedures.</li>
         </ul>
       </div>
       <div class="card" style="border-top:3px solid var(--red);">
-        <h3 style="color:var(--red);margin-bottom:1rem;">⚠️ Potential Harms</h3>
+        <h3 style="color:var(--red);margin-bottom:1rem;">Potential Harms</h3>
         <ul style="padding-left:1.25rem;">
           <li style="margin-bottom:0.6rem;"><strong>Overdiagnosis:</strong> Detection of slow-growing cancers (Grade Group 1) that would never have caused symptoms or death — leading to unnecessary anxiety and potential overtreatment.</li>
           <li style="margin-bottom:0.6rem;"><strong>Overtreatment:</strong> Side effects of surgery (incontinence, erectile dysfunction) or radiation in men whose cancer may never have needed treatment.</li>
@@ -217,7 +214,7 @@
           <p style="font-size:0.78rem;color:var(--text-mid);margin-bottom:0.4rem;">Requiring hospitalization</p>
           <div class="picto-wrap" id="picto-sepsis" style="max-width:216px;"></div>
           <p style="font-size:0.875rem;font-weight:800;color:var(--red);">~1–2 in 100</p>
-          <p style="font-size:0.75rem;color:var(--text-light);">Sources: Loeb S et al., J Urol 2013; Williamson DA et al., Lancet Infect Dis 2013</p>
+          <p style="font-size:0.75rem;color:var(--text-light);">Sources: Loeb S et al., J Urol 2011; Williamson DA et al., Lancet Infect Dis 2013</p>
         </div>
         <!-- Bleeding -->
         <div>
@@ -321,7 +318,7 @@
         <tbody>
           <tr>
             <td><strong>ERSPC</strong><br/><span style="font-size:0.75rem;color:var(--text-light);">European, ~182,000 men</span></td>
-            <td>21% relative reduction in prostate cancer mortality in screened group; no change in overall mortality</td>
+            <td>21% relative reduction in prostate cancer mortality in the screened group at 13 years; 20% at 16 years. No change in overall mortality</td>
             <td>16 years</td>
             <td>PSA screening reduces cancer deaths but requires long-term follow-up to demonstrate benefit; does not improve all-cause mortality</td>
           </tr>
@@ -345,7 +342,7 @@
           </tr>
           <tr>
             <td><strong>CAP</strong><br/><span style="font-size:0.75rem;color:var(--text-light);">UK, ~415,000 men</span></td>
-            <td>Single PSA test invitation showed no mortality benefit at 10 yrs</td>
+            <td>A single PSA test invitation showed no significant difference in prostate cancer mortality at 10 years, and a small reduction at 15 years (0.69% vs. 0.78%)</td>
             <td>15 years</td>
             <td>A one-time low-intensity PSA screen provides minimal absolute benefit while increasing overdiagnosis of low-grade cancer</td>
           </tr>
@@ -354,7 +351,7 @@
     </div>
     <div class="alert alert-info mt-2">
       <div class="alert-title">Why the Trials Seem Contradictory</div>
-      <p>The PLCO trial had significant contamination — many men in the "unscreened" arm had already received PSA tests before or during the trial, diluting any survival benefit. The ERSPC trial, with stricter methodology, shows the clearest reduction in prostate cancer mortality. Both AUA/SUO guidelines acknowledge this nuance and note that the benefit of screening takes at least 7–10 years to materialize.</p>
+      <p>The PLCO trial had significant contamination — many men in the "unscreened" arm had already received PSA tests before or during the trial, diluting any survival benefit. The ERSPC trial, with stricter methodology, shows the clearest reduction in prostate cancer mortality. The AUA/SUO guidelines acknowledge this nuance and note that the benefit of screening takes at least 7–10 years to materialize.</p>
     </div>
   </section>
 
@@ -369,18 +366,24 @@
     <div class="card ref-list">
       <ol>
         <li>
-          <strong>Wei JT, Barocas D, Carlsson S, et al.</strong> Early Detection of Prostate Cancer: AUA/SUO Guideline Part I. <em>J Urol.</em> 2023;210(1):46–53.
-          <a href="https://pubmed.ncbi.nlm.nih.gov/37096583/" target="_blank" rel="noopener noreferrer">PMID: 37096583 ↗</a>
+          <strong>Wei JT, Barocas D, Carlsson S, et al.</strong> Early Detection of Prostate Cancer: AUA/SUO Guideline Part I: Prostate Cancer Screening. <em>J Urol.</em> 2023;210(1):46–53.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/37096582/" target="_blank" rel="noopener noreferrer">PMID: 37096582 ↗</a>
           <br/><span style="font-size:0.75rem;color:var(--text-light);">Primary guideline — risk stratification, PSA thresholds, stopping rules, shared decision-making</span>
         </li>
         <li>
-          <strong>Lin DW, Carlsson S, Filson CP, et al.</strong> Updates to Early Detection of Prostate Cancer: AUA/SUO Guideline (2026). <em>J Urol.</em> doi:10.1097/JU.0000000000004995.
+          <strong>Lin DW, Carlsson S, Filson CP, et al.</strong> Updates to Early Detection of Prostate Cancer: AUA/SUO Guideline (2026). <em>J Urol.</em> 2026;215(5):491–501.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41744286/" target="_blank" rel="noopener noreferrer">PMID: 41744286 ↗</a>
           <br/><span style="font-size:0.75rem;color:var(--text-light);">2026 amendment — updated screening intervals, biopsy and repeat-biopsy statements, expanded high-risk gene mutation list</span>
         </li>
         <li>
           <strong>Schröder FH, Hugosson J, Roobol MJ, et al. (ERSPC).</strong> Screening and prostate cancer mortality: results of the European Randomised Study of Screening for Prostate Cancer at 13 years. <em>Lancet.</em> 2014;384(9959):2027–35.
           <a href="https://pubmed.ncbi.nlm.nih.gov/25108889/" target="_blank" rel="noopener noreferrer">PMID: 25108889 ↗</a>
-          <br/><span style="font-size:0.75rem;color:var(--text-light);">ERSPC — 21% relative reduction in prostate cancer mortality; no change in overall mortality</span>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">ERSPC at 13 years — 21% relative reduction in prostate cancer mortality; no change in overall mortality</span>
+        </li>
+        <li>
+          <strong>Hugosson J, Roobol MJ, Månsson M, et al.</strong> A 16-yr follow-up of the European Randomized study of Screening for Prostate Cancer. <em>Eur Urol.</em> 2019;76(1):43–51.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/30824296/" target="_blank" rel="noopener noreferrer">PMID: 30824296 ↗</a>
+          <br/><span style="font-size:0.75rem;color:var(--text-light);">ERSPC at 16 years — 20% relative reduction in prostate cancer mortality; 570 men invited to prevent one death</span>
         </li>
         <li>
           <strong>Thompson IM, Pauler DK, Goodman PJ, et al.</strong> Prevalence of prostate cancer among men with a PSA level ≤4.0 ng per milliliter. <em>N Engl J Med.</em> 2004;350(22):2239–46.
@@ -389,7 +392,7 @@
         </li>
         <li>
           <strong>Lilja H, Ulmert D, Vickers AJ.</strong> Prostate-specific antigen and prostate cancer: prediction, detection and monitoring. <em>Nat Rev Cancer.</em> 2008;8(4):268–78.
-          <a href="https://pubmed.ncbi.nlm.nih.gov/18292776/" target="_blank" rel="noopener noreferrer">PMID: 18292776 ↗</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/18337732/" target="_blank" rel="noopener noreferrer">PMID: 18337732 ↗</a>
           <br/><span style="font-size:0.75rem;color:var(--text-light);">Baseline PSA at age 40 as predictor of future lethal cancer</span>
         </li>
         <li>
@@ -399,7 +402,7 @@
         </li>
         <li>
           <strong>Ficarra V, Novara G, Rosen RC, et al.</strong> Systematic review and meta-analysis of studies reporting urinary continence recovery after robot-assisted radical prostatectomy. <em>Eur Urol.</em> 2012;62(3):405–17.
-          <a href="https://pubmed.ncbi.nlm.nih.gov/22749958/" target="_blank" rel="noopener noreferrer">PMID: 22749958 ↗</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/22749852/" target="_blank" rel="noopener noreferrer">PMID: 22749852 ↗</a>
           <br/><span style="font-size:0.75rem;color:var(--text-light);">Post-surgical incontinence rates; ~84% continent at 12 months (i.e., ~16% incontinent)</span>
         </li>
         <li>
@@ -409,17 +412,17 @@
         </li>
         <li>
           <strong>Tosoian JJ, Druskin SC, Andreas D, et al.</strong> Use of the Prostate Health Index for detection of prostate cancer: results from a large academic practice. <em>Prostate Cancer Prostatic Dis.</em> 2017;20(2):228–33.
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5895603/" target="_blank" rel="noopener noreferrer">PMC5895603 ↗</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/28117387/" target="_blank" rel="noopener noreferrer">PMID: 28117387 ↗</a>
           <br/><span style="font-size:0.75rem;color:var(--text-light);">PHI performance; ~30% reduction in unnecessary biopsies</span>
         </li>
         <li>
-          <strong>Nordström T, Vickers A, Assel M, et al.</strong> Comparison between the four-kallikrein panel and Prostate Health Index for predicting prostate cancer. <em>Eur Urol.</em> 2015;68(2):207–13.
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4503229/" target="_blank" rel="noopener noreferrer">PMC4503229 ↗</a>
+          <strong>Nordström T, Vickers A, Assel M, et al.</strong> Comparison between the four-kallikrein panel and Prostate Health Index for predicting prostate cancer. <em>Eur Urol.</em> 2015;68(1):139–46.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/25151013/" target="_blank" rel="noopener noreferrer">PMID: 25151013 ↗</a>
           <br/><span style="font-size:0.75rem;color:var(--text-light);">4Kscore vs. PHI head-to-head — comparable performance</span>
         </li>
         <li>
           <strong>Hamdy FC, Donovan JL, Lane JA, et al. (ProtecT).</strong> Fifteen-year outcomes after monitoring, surgery, or radiotherapy for prostate cancer. <em>N Engl J Med.</em> 2023;388(17):1547–58.
-          <a href="https://pubmed.ncbi.nlm.nih.gov/37066659/" target="_blank" rel="noopener noreferrer">PMID: 37066659 ↗</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/36912538/" target="_blank" rel="noopener noreferrer">PMID: 36912538 ↗</a>
           <br/><span style="font-size:0.75rem;color:var(--text-light);">ProtecT 15-year follow-up — similar prostate cancer mortality across all three arms; more metastases with monitoring</span>
         </li>
       </ol>
@@ -428,7 +431,7 @@
 
   <!-- External Calculators -->
   <section class="section">
-    <div class="card" style="border-left:3px solid #111;">
+    <div class="card" style="border-left:3px solid var(--accent);">
       <h3 style="margin-bottom:0.75rem;">Validated External Risk Calculators</h3>
       <p style="font-size:0.875rem;">These tools, referenced in the AUA guidelines, allow more detailed risk estimation using multiple clinical variables. They are designed for use with your physician.</p>
       <div class="grid-2 mt-2" style="gap:0.75rem;">
@@ -453,7 +456,7 @@
 </div>
 
 <footer class="site-footer">
-  <p><strong style="color:#eee;">Prostate Cancer Screening Pathway</strong></p>
+  <p><strong style="color:#fff;">Prostate Cancer Screening Pathway</strong></p>
   <p style="margin-top:0.5rem;">
     <a href="index.html">Home</a> &bull; <a href="screening.html">Who Should Be Screened</a> &bull;
     <a href="results.html">PSA Results</a> &bull; <a href="education.html">Education</a> &bull; <a href="data.html">Data &amp; References</a>
@@ -495,6 +498,9 @@ function buildPicto(containerId, total, counts, colors) {
 /* ============================================================
    PSA vs Cancer Risk Bar Chart
    ============================================================ */
+Chart.defaults.font.family = "'Source Sans 3', 'Segoe UI', Arial, sans-serif";
+Chart.defaults.color = '#47515e';
+
 (function() {
   var ctx = document.getElementById('psaCancerChart').getContext('2d');
   new Chart(ctx, {
